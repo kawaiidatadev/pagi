@@ -10,8 +10,8 @@
 <link rel="alternate" hreflang="en" href="https://kawaiidatadev.github.io/pagi/en/terms/">
 <link rel="alternate" hreflang="x-default" href="https://kawaiidatadev.github.io/pagi/terminos/">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#0C5C50">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230C5C50'/%3E%3Cpath d='M14 20h14M14 32h14M14 44h14M28 20c8 0 8 12 14 12M28 44c8 0 8-12 14-12M28 32h14' stroke='%23F3D34A' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='32' r='5' fill='%23ffffff'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B1220">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1220'/%3E%3Cpath d='M12 20h14M12 32h14M12 44h14M26 20c8 0 8 12 14 12M26 44c8 0 8-12 14-12M26 32h14' stroke='%2338BDF8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='32' r='6' fill='%23F59E0B'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PAGI">
 <meta property="og:locale" content="en_US">
@@ -26,28 +26,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/pagi/style.css?v=1">
+<link rel="stylesheet" href="/pagi/style.css?v=2">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="langbar" id="langbar" hidden><div class="wrap"><span>Este sitio también está en español.</span><a href="/pagi/terminos/" data-lang-ok hreflang="es">Ver en español</a><button type="button" data-lang-ok aria-label="Cerrar">×</button></div></div>
+<div class="langbar" id="langbar" hidden><div class="wrap"><span>Este sitio también está en español.</span><a href="/pagi/terminos/" data-lang-ok data-lang-link hreflang="es">Ver en español</a><button type="button" data-lang-ok aria-label="Cerrar">×</button></div></div>
 <header class="top">
   <div class="wrap nav">
-    <a class="brand" href="/pagi/en/" aria-label="PAGI, home"><b>PAGI</b><small>Process · Automation · Management · Innovation</small></a>
-    <a class="link" href="/pagi/en/#servicios">Services</a><a class="link" href="/pagi/en/#metodo">How we work</a><a class="link" href="/pagi/en/#calculadora">Calculator</a><a class="link" href="/pagi/en/#preguntas">FAQ</a>
+    <a class="brand" href="/pagi/en/" aria-label="PAGI, home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0B1220"/><path d="M12 20h14M12 32h14M12 44h14M26 20c8 0 8 12 14 12M26 44c8 0 8-12 14-12M26 32h14" stroke="#38BDF8" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="48" cy="32" r="6" fill="#F59E0B"/></svg><b>PAGI</b><small>Automated processes with management and intelligence</small></a>
+    <nav class="links" aria-label="Sections"><a href="/pagi/en/#autodiagnostico">Self-check</a><a href="/pagi/en/#servicios">Services</a><a href="/pagi/en/#calculadora">Calculator</a><a href="/pagi/en/#datos">Data demo</a><a href="/pagi/en/#metodo">Method</a><a href="/pagi/en/#casos">Cases</a><a href="/pagi/en/#contacto">Contact</a></nav>
     <div class="tools">
-      <a class="icon-btn" href="/pagi/terminos/" hreflang="es" lang="es" data-lang-ok title="Versión en español" aria-label="Versión en español">ES</a>
+      <a class="icon-btn" href="/pagi/terminos/" hreflang="es" lang="es" data-lang-ok data-lang-link title="Versión en español" aria-label="Versión en español">ES</a>
       <button class="icon-btn" type="button" id="theme-btn" aria-label="Change theme"></button>
       <button class="icon-btn" type="button" id="motion-btn" aria-label="Pause animations"></button>
-      <a class="btn primary cta-top" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a>
+      <a class="btn primary small cta-top" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a>
+      <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
+  <div class="mobile-menu" id="mobile-menu" hidden><div class="wrap"><nav aria-label="Sections"><a href="/pagi/en/#autodiagnostico">Self-check</a><a href="/pagi/en/#servicios">Services</a><a href="/pagi/en/#calculadora">Calculator</a><a href="/pagi/en/#datos">Data demo</a><a href="/pagi/en/#metodo">Method</a><a href="/pagi/en/#casos">Cases</a><a href="/pagi/en/#contacto">Contact</a><a class="btn primary" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a></nav></div></div>
+  <span class="progress" id="progress" aria-hidden="true"></span>
 </header>
 <main id="main" class="legal">
   <div class="wrap doc">
     <span class="label">Legal</span>
     <h1>Terms of use</h1>
-    <p class="meta">Last updated: October 25, 2026</p>
+    <p class="meta">Last updated: October 26, 2026</p>
     <p class="box">This English version is provided for convenience. The Spanish version is the legally binding one.</p>
 
     <h2>1. Who runs this site</h2>
@@ -59,8 +62,8 @@
     <h2>3. Prices</h2>
     <p>Prices are in Mexican pesos and do not include Value Added Tax (IVA), which is added when invoicing. They are reference ranges that depend on process complexity; the final price is set in the written proposal, after the assessment. PAGI may update the published ranges without affecting proposals already accepted.</p>
 
-    <h2>4. Calculator and self-check</h2>
-    <p>The calculator and the self-check give illustrative estimates based on the data you enter. They are calculated in your browser, are not sent to PAGI and do not guarantee savings or results. Actual results are determined through measurements during an assessment.</p>
+    <h2>4. Calculator, self-check and demos</h2>
+    <p>The calculator and the self-check give illustrative estimates based on the data you enter. They are calculated in your browser, are not sent to PAGI and do not guarantee savings, returns or results; the value of freed time is not the same as money saved. The data simulator uses fictitious data and shows sample rules run in JavaScript. Actual results are determined through measurements during an assessment.</p>
 
     <h2>5. Intellectual property</h2>
     <p>The text, design, graphics and code of this site, and the trade name PAGI, belong to their owner. They may not be copied or used commercially without written permission. Typefaces are used under the SIL Open Font License. Third-party trademarks mentioned (for example Excel, Power BI, SAP or WhatsApp) belong to their respective owners and are cited for reference only.</p>
@@ -91,6 +94,6 @@
     </nav>
   </div>
 </footer>
-<script src="/pagi/site.js?v=1" defer></script>
+<script src="/pagi/site.js?v=2" defer></script>
 </body>
 </html>
