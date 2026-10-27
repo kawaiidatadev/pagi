@@ -212,8 +212,50 @@
     return { rows: out, summary: summary, consolidated: consolidated };
   }
 
+
+  /* ---------- 4. Laboratorio neuronal (simulación) ----------
+     Red feedforward 4 → 4 → 3 con pesos DEFINIDOS A MANO para ilustrar; no está entrenada con datos reales.
+     Entradas normalizadas a 0–1 con min–max. Capa oculta: ReLU(W1·x + b1). Salida: softmax(W2·h + b2).
+     Cada neurona oculta tiene un significado porque sus pesos se eligieron a mano; en una red entrenada no siempre es así. */
+  var NN = {
+    inputs: [
+      { id: 'temp', min: 20, max: 120, step: 1, value: 55 },
+      { id: 'vib', min: 0, max: 20, step: 0.5, value: 2 },
+      { id: 'amp', min: 50, max: 150, step: 1, value: 90 },
+      { id: 'hrs', min: 0, max: 8000, step: 100, value: 1500 }
+    ],
+    hidden: ['termico', 'mecanico', 'electrico', 'desgaste'],
+    outputs: ['normal', 'desgaste', 'anomalia'],
+    //        temp  vib   amp   hrs
+    W1: [[1.6, 0, 0.6, 0], [0, 1.8, 0, 0.3], [0.3, 0, 1.5, 0], [0, 0.5, 0, 1.4]],
+    b1: [-0.9, -0.6, -1.0, -0.7],
+    //        térm  mecá  eléc  desg
+    W2: [[-2.0, -2.2, -2.0, -1.6], [0.4, 0.9, 0.2, 2.6], [2.4, 2.6, 2.4, 0.5]],
+    b2: [1.2, -0.2, -0.8],
+    presets: {
+      normal: [55, 2, 90, 1500], desgaste: [62, 5, 95, 7000],
+      calor: [105, 3, 130, 2000], vibracion: [60, 12, 100, 3000]
+    }
+  };
+
+  function neuralForward(raw) {
+    var x = NN.inputs.map(function (inp, i) {
+      var v = Math.min(inp.max, Math.max(inp.min, +raw[i]));
+      return round4((v - inp.min) / (inp.max - inp.min));
+    });
+    var z1 = NN.W1.map(function (w, j) { return round4(w.reduce(function (a, wi, i) { return a + wi * x[i]; }, NN.b1[j])); });
+    var h = z1.map(function (z) { return Math.max(0, z); });
+    var z2 = NN.W2.map(function (w, k) { return round4(w.reduce(function (a, wj, j) { return a + wj * h[j]; }, NN.b2[k])); });
+    var m = Math.max.apply(null, z2), e = z2.map(function (z) { return Math.exp(z - m); }), sum = e.reduce(function (a, b) { return a + b; }, 0);
+    var p = e.map(function (v) { return round4(v / sum); });
+    var best = p.indexOf(Math.max.apply(null, p));
+    return { x: x, z1: z1, h: h, z2: z2, p: p, best: best, cls: NN.outputs[best] };
+  }
+  function round4(v) { return Math.round(v * 10000) / 10000; }
+
   root.PAGILogic = {
     LIMITS: LIMITS, SCENARIOS: SCENARIOS, validateInputs: validateInputs, roi: roi, scenarios: scenarios,
-    QUIZ: QUIZ, evaluateQuiz: evaluateQuiz, SAMPLE: SAMPLE, runETL: runETL, parseDate: parseDate, parseAmount: parseAmount
+    QUIZ: QUIZ, evaluateQuiz: evaluateQuiz, SAMPLE: SAMPLE, runETL: runETL, parseDate: parseDate, parseAmount: parseAmount,
+    NN: NN, neuralForward: neuralForward
   };
 })(typeof window !== 'undefined' ? window : this);

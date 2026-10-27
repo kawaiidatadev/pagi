@@ -35,7 +35,7 @@
 <header class="top">
   <div class="wrap nav">
     <a class="brand" href="/pagi/" aria-label="PAGI, inicio"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="14" fill="#0B1220"/><path d="M16 53V11h18a14 14 0 0 1 0 28H26v14z" fill="#fff"/><path d="M28 21L39 25L28 30" fill="none" stroke="#0B1220" stroke-width="2.4"/><circle cx="28" cy="21" r="3.2" fill="#2563EB"/><circle cx="28" cy="30" r="3.2" fill="#2563EB"/><circle cx="39" cy="25" r="3.6" fill="#F59E0B"/></svg><b>PAGI</b><small>Procesos automatizados con gestión e inteligencia</small></a>
-    <nav class="links" aria-label="Secciones"><a href="#autodiagnostico">Diagnóstico</a><a href="#servicios">Servicios</a><a href="#calculadora">Calculadora</a><a href="#datos">Datos</a><a href="#metodo">Método</a><a href="#casos">Casos</a><a href="#contacto">Contacto</a></nav>
+    <nav class="links" aria-label="Secciones"><a href="#autodiagnostico">Diagnóstico</a><a href="#servicios">Servicios</a><a href="#calculadora">Calculadora</a><a href="#datos">Datos</a><a href="#ia">IA</a><a href="#metodo">Método</a><a href="#casos">Casos</a><a href="#contacto">Contacto</a></nav>
     <div class="tools">
       <a class="icon-btn" href="/pagi/en/" hreflang="en" lang="en" data-lang-ok data-lang-link title="English version" aria-label="English version">EN</a>
       <button class="icon-btn" type="button" id="theme-btn" aria-label="Cambiar tema"></button>
@@ -44,7 +44,7 @@
       <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
-  <div class="mobile-menu" id="mobile-menu" hidden><div class="wrap"><nav aria-label="Secciones"><a href="#autodiagnostico">Diagnóstico</a><a href="#servicios">Servicios</a><a href="#calculadora">Calculadora</a><a href="#datos">Datos</a><a href="#metodo">Método</a><a href="#casos">Casos</a><a href="#contacto">Contacto</a><a class="btn primary" href="https://wa.me/523324393525?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20PAGI%20y%20me%20interesa%20un%20diagn%C3%B3stico%20de%20proceso." target="_blank" rel="noopener">Agenda un diagnóstico</a></nav></div></div>
+  <div class="mobile-menu" id="mobile-menu" hidden><div class="wrap"><nav aria-label="Secciones"><a href="#autodiagnostico">Diagnóstico</a><a href="#servicios">Servicios</a><a href="#calculadora">Calculadora</a><a href="#datos">Datos</a><a href="#ia">IA</a><a href="#metodo">Método</a><a href="#casos">Casos</a><a href="#contacto">Contacto</a><a class="btn primary" href="https://wa.me/523324393525?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20PAGI%20y%20me%20interesa%20un%20diagn%C3%B3stico%20de%20proceso." target="_blank" rel="noopener">Agenda un diagnóstico</a></nav></div></div>
   <span class="progress" id="progress" aria-hidden="true"></span>
 </header>
 <main id="main">
@@ -78,7 +78,7 @@
           </div>
         </div>
         <div class="console-body">
-          <ol class="flow flowing" id="flow"></ol><span class="sr-only" id="mode-say" aria-live="polite"></span>
+          <ol class="flow" id="flow"></ol><span class="sr-only" id="mode-say" aria-live="polite"></span>
           <div class="kpis" id="kpis"></div>
         </div>
         <p class="console-foot"><span class="sim">Simulación ilustrativa</span> Las cifras reales de tu proceso se miden en el diagnóstico.</p>
@@ -123,7 +123,7 @@
     </div>
   </section>
 
-  <section id="servicios" style="padding-top:0">
+  <section id="servicios" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Servicios</span>
@@ -135,7 +135,7 @@
     </div>
   </section>
 
-  <section id="calculadora" style="padding-top:0">
+  <section id="calculadora" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Calculadora de costo y retorno</span>
@@ -221,7 +221,7 @@
     </div>
   </section>
 
-  <section id="datos" style="padding-top:0">
+  <section id="datos" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Demostración · limpieza y consolidación de datos</span>
@@ -256,7 +256,65 @@
     </div>
   </section>
 
-  <section id="metodo" style="padding-top:0">
+  <section id="ia" class="flush">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Laboratorio neuronal · simulación</span>
+        <h2>Así razona una red neuronal con los datos de un motor.</h2>
+        <p class="lead">Cuatro lecturas de un motor pasan por cuatro neuronas ocultas y terminan en tres posibles estados. Mueve los valores y observa cómo cambian las activaciones y las conexiones. Los pesos se definieron a mano para que cada paso sea explicable: es una ilustración, no un modelo entrenado ni una herramienta de diagnóstico.</p>
+      </div>
+      <div class="console nn reveal" id="nn">
+        <div class="console-head">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="label">pagi_neural_lab · 4 → 4 → 3</span>
+          <span class="sim">Simulación · pesos definidos a mano</span>
+        </div>
+        <div class="console-body nn-grid">
+          <div class="nn-controls">
+            <span class="label">Escenarios de ejemplo</span>
+            <div class="nn-presets" role="group" aria-label="Escenarios de ejemplo">
+              <button type="button" class="btn ghost small" data-preset="normal">Normal</button>
+              <button type="button" class="btn ghost small" data-preset="desgaste">Desgaste</button>
+              <button type="button" class="btn ghost small" data-preset="calor">Sobrecalentamiento</button>
+              <button type="button" class="btn ghost small" data-preset="vibracion">Vibración alta</button>
+            </div>
+            <div class="nn-fields" id="nn-fields"></div>
+            <div class="nn-run">
+              <button type="button" class="btn primary small" id="nn-run">Ejecutar inferencia</button>
+              <button type="button" class="btn ghost small" id="nn-pause" aria-pressed="false" disabled>Pausar</button>
+              <button type="button" class="btn ghost small" id="nn-reset">Reiniciar</button>
+            </div>
+            <p class="label nn-state" id="nn-state" aria-live="polite"></p>
+          </div>
+          <figure class="nn-figure">
+            <div class="nn-svgbox"><svg id="nn-svg" role="group" aria-labelledby="nn-desc"></svg></div>
+            <figcaption class="nn-legend">
+              <span><i class="lg pos"></i>Peso positivo</span>
+              <span><i class="lg neg"></i>Peso negativo (punteado)</span>
+              <span><i class="lg act"></i>Relleno = activación</span>
+              <span>Grosor = magnitud del peso. Toca una neurona para ver su cálculo.</span>
+            </figcaption>
+            <p class="sr-only" id="nn-desc"></p>
+          </figure>
+          <div class="nn-side">
+            <div class="nn-outbox">
+              <span class="label">Salida (softmax)</span>
+              <div class="nn-out" id="nn-out"></div>
+              <p class="nn-interp" id="nn-interp"></p>
+            </div>
+            <div class="nn-explain" id="nn-explain" aria-live="polite"></div>
+          </div>
+        </div>
+        <details class="nn-table">
+          <summary>Ver todos los valores en tabla</summary>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Valores de la red"><table id="nn-tbl"></table></div>
+        </details>
+        <p class="console-foot">Simulación ilustrativa con variables simplificadas: temperatura, vibración, corriente y horas no bastan para diagnosticar una máquina real. En un proyecto real entrenamos el modelo con el historial del cliente, lo validamos con datos que no vio y reportamos su precisión, como en el caso de clasificación de fallas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Cómo trabajamos</span>
@@ -270,7 +328,7 @@
     </div>
   </section>
 
-  <section id="casos" style="padding-top:0">
+  <section id="casos" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Casos y demostraciones</span>
@@ -319,7 +377,7 @@
     </div>
   </section>
 
-  <section id="piloto" style="padding-top:0">
+  <section id="piloto" class="flush">
     <div class="wrap">
       <div class="pilot reveal">
         <div class="count" aria-hidden="true"><i></i><i></i><i></i></div>
@@ -333,7 +391,7 @@
     </div>
   </section>
 
-  <section id="principios" style="padding-top:0">
+  <section id="principios" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Principios</span>
@@ -362,7 +420,7 @@
     </div>
   </section>
 
-  <section id="equipo" style="padding-top:0">
+  <section id="equipo" class="flush">
     <div class="wrap founder">
       <div class="reveal" style="display:grid;gap:16px">
         <span class="label">Quién está detrás</span>
@@ -380,7 +438,7 @@
     </div>
   </section>
 
-  <section id="preguntas" style="padding-top:0">
+  <section id="preguntas" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Preguntas frecuentes</span>
@@ -516,7 +574,15 @@
  "running":"Ejecutando {r}…","done":"Listo: 6 reglas aplicadas","orig":"Datos originales",
  "consTitle":"Total por sucursal (sólo válidos y corregidos)","consNote":"Las filas en revisión no entran al reporte hasta que alguien las apruebe.",
  "orders":"pedidos","quality":"Calidad de los datos","show":"Ver","hide":"Ocultar","legendBefore":"Celdas resaltadas: espacios sobrantes (azul) y formatos distintos al estándar (rojo).","legendAfter":"Verde: corregido automáticamente · Ámbar: requiere revisión · Rojo: motivo de rechazo."},
-"form":{"nombre":"Escribe tu nombre (al menos 2 letras).","msg":"Describe el proceso en al menos 10 caracteres.","fix":"Revisa los campos marcados.","opened":"Mensaje listo. Intentamos abrir WhatsApp en otra pestaña; si no se abrió, usa el enlace. Nada nos llega hasta que lo envíes desde WhatsApp.","blocked":"Tu navegador no abrió la pestaña.","openLink":"Abrir WhatsApp con el mensaje","hi":"Hola, soy","from":"de","topic":"Me interesa","process":"Proceso a mejorar","quizOn":"Incluir el resultado del autodiagnóstico"}
+"form":{"nombre":"Escribe tu nombre (al menos 2 letras).","msg":"Describe el proceso en al menos 10 caracteres.","fix":"Revisa los campos marcados.","opened":"Mensaje listo. Intentamos abrir WhatsApp en otra pestaña; si no se abrió, usa el enlace. Nada nos llega hasta que lo envíes desde WhatsApp.","blocked":"Tu navegador no abrió la pestaña.","openLink":"Abrir WhatsApp con el mensaje","hi":"Hola, soy","from":"de","topic":"Me interesa","process":"Proceso a mejorar","quizOn":"Incluir el resultado del autodiagnóstico"},
+"nn":{
+ "in":[ ["Temperatura del motor","°C","Temp."],["Vibración (RMS)","mm/s","Vibración"],["Corriente (% de la nominal)","%","Corriente"],["Horas desde el último mantenimiento","h","Horas"]],
+ "hid":[ ["Estrés térmico","Térmico"],["Vibración anómala","Mecánico"],["Sobrecarga eléctrica","Eléctrico"],["Uso acumulado","Uso"]],
+ "out":[ ["Operación normal","Normal"],["Desgaste probable","Desgaste"],["Anomalía: revisar","Anomalía"]],
+ "interp":["Las lecturas están en rangos típicos: ninguna neurona de riesgo se activa.","Las horas de operación y la vibración apuntan a desgaste: convendría programar mantenimiento preventivo.","Una lectura salió muy de rango (temperatura, vibración o corriente): conviene revisar el equipo."],
+ "ready":"Listo. Cambia un valor o ejecuta la inferencia.","run1":"Propagando: entradas → capa oculta…","run2":"Propagando: capa oculta → salida…","done":"Inferencia completa.","paused":"En pausa. Los valores siguen disponibles.","pause":"Pausar","resume":"Reanudar",
+ "inNode":"Entrada","hidNode":"Neurona oculta","outNode":"Neurona de salida","norm":"Normalización","sum":"Suma ponderada","act":"Activación ReLU","soft":"Softmax: convierte las sumas de salida en probabilidades que suman 100%.","prob":"Probabilidad","bias":"sesgo","layer":["Entradas","Capa oculta (ReLU)","Salida (softmax)"],
+ "desc":"Red de 4 entradas, 4 neuronas ocultas y 3 salidas. Resultado: {r} con {p}.","col":["Neurona","Valor de entrada o suma","Activación o probabilidad"]}
 }</script>
 <footer class="foot">
   <div class="wrap">

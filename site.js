@@ -74,7 +74,8 @@
   function onScroll() {
     ticking = false;
     var y = window.scrollY, max = document.documentElement.scrollHeight - window.innerHeight;
-    if (header) header.classList.toggle('scrolled', y > 8);
+    // Histéresis: se activa por encima de 24 px y se desactiva por debajo de 4 px.
+    if (header) { if (y > 24) header.classList.add('scrolled'); else if (y < 4) header.classList.remove('scrolled'); }
     if (prog) prog.style.transform = 'scaleX(' + (max > 0 ? Math.min(1, y / max) : 0) + ')';
   }
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } }, { passive: true });
