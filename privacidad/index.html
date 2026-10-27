@@ -10,8 +10,8 @@
 <link rel="alternate" hreflang="en" href="https://kawaiidatadev.github.io/pagi/en/privacy/">
 <link rel="alternate" hreflang="x-default" href="https://kawaiidatadev.github.io/pagi/privacidad/">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#0C5C50">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230C5C50'/%3E%3Cpath d='M14 20h14M14 32h14M14 44h14M28 20c8 0 8 12 14 12M28 44c8 0 8-12 14-12M28 32h14' stroke='%23F3D34A' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='32' r='5' fill='%23ffffff'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B1220">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1220'/%3E%3Cpath d='M12 20h14M12 32h14M12 44h14M26 20c8 0 8 12 14 12M26 44c8 0 8-12 14-12M26 32h14' stroke='%2338BDF8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='32' r='6' fill='%23F59E0B'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PAGI">
 <meta property="og:locale" content="es_MX">
@@ -26,28 +26,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/pagi/style.css?v=1">
+<link rel="stylesheet" href="/pagi/style.css?v=2">
 </head>
 <body>
 <a class="skip" href="#main">Saltar al contenido</a>
-<div class="langbar" id="langbar" hidden><div class="wrap"><span>This site is also available in English.</span><a href="/pagi/en/privacy/" data-lang-ok hreflang="en">View in English</a><button type="button" data-lang-ok aria-label="Close">×</button></div></div>
+<div class="langbar" id="langbar" hidden><div class="wrap"><span>This site is also available in English.</span><a href="/pagi/en/privacy/" data-lang-ok data-lang-link hreflang="en">View in English</a><button type="button" data-lang-ok aria-label="Close">×</button></div></div>
 <header class="top">
   <div class="wrap nav">
-    <a class="brand" href="/pagi/" aria-label="PAGI, inicio"><b>PAGI</b><small>Procesos · Automatización · Gestión · Innovación</small></a>
-    <a class="link" href="/pagi/#servicios">Servicios</a><a class="link" href="/pagi/#metodo">Cómo trabajamos</a><a class="link" href="/pagi/#calculadora">Calculadora</a><a class="link" href="/pagi/#preguntas">Preguntas</a>
+    <a class="brand" href="/pagi/" aria-label="PAGI, inicio"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0B1220"/><path d="M12 20h14M12 32h14M12 44h14M26 20c8 0 8 12 14 12M26 44c8 0 8-12 14-12M26 32h14" stroke="#38BDF8" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="48" cy="32" r="6" fill="#F59E0B"/></svg><b>PAGI</b><small>Procesos automatizados con gestión e inteligencia</small></a>
+    <nav class="links" aria-label="Secciones"><a href="/pagi/#autodiagnostico">Diagnóstico</a><a href="/pagi/#servicios">Servicios</a><a href="/pagi/#calculadora">Calculadora</a><a href="/pagi/#datos">Datos</a><a href="/pagi/#metodo">Método</a><a href="/pagi/#casos">Casos</a><a href="/pagi/#contacto">Contacto</a></nav>
     <div class="tools">
-      <a class="icon-btn" href="/pagi/en/privacy/" hreflang="en" lang="en" data-lang-ok title="English version" aria-label="English version">EN</a>
+      <a class="icon-btn" href="/pagi/en/privacy/" hreflang="en" lang="en" data-lang-ok data-lang-link title="English version" aria-label="English version">EN</a>
       <button class="icon-btn" type="button" id="theme-btn" aria-label="Cambiar tema"></button>
       <button class="icon-btn" type="button" id="motion-btn" aria-label="Pausar animaciones"></button>
-      <a class="btn primary cta-top" href="https://wa.me/523324393525?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20PAGI%20y%20me%20interesa%20un%20diagn%C3%B3stico%20de%20proceso." target="_blank" rel="noopener">Agenda un diagnóstico</a>
+      <a class="btn primary small cta-top" href="https://wa.me/523324393525?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20PAGI%20y%20me%20interesa%20un%20diagn%C3%B3stico%20de%20proceso." target="_blank" rel="noopener">Agenda un diagnóstico</a>
+      <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
+  <div class="mobile-menu" id="mobile-menu" hidden><div class="wrap"><nav aria-label="Secciones"><a href="/pagi/#autodiagnostico">Diagnóstico</a><a href="/pagi/#servicios">Servicios</a><a href="/pagi/#calculadora">Calculadora</a><a href="/pagi/#datos">Datos</a><a href="/pagi/#metodo">Método</a><a href="/pagi/#casos">Casos</a><a href="/pagi/#contacto">Contacto</a><a class="btn primary" href="https://wa.me/523324393525?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20PAGI%20y%20me%20interesa%20un%20diagn%C3%B3stico%20de%20proceso." target="_blank" rel="noopener">Agenda un diagnóstico</a></nav></div></div>
+  <span class="progress" id="progress" aria-hidden="true"></span>
 </header>
 <main id="main" class="legal">
   <div class="wrap doc">
     <span class="label">Legal</span>
     <h1>Aviso de privacidad integral</h1>
-    <p class="meta">Última actualización: 25 de octubre de 2026</p>
+    <p class="meta">Última actualización: 26 de octubre de 2026</p>
     
 
     <h2>1. Identidad y domicilio del responsable</h2>
@@ -64,7 +67,7 @@
     <p>No solicitamos datos personales sensibles. Le pedimos no compartirlos en mensajes, entrevistas o correos.</p>
 
     <h2>3. Cómo obtenemos sus datos</h2>
-    <p>Los obtenemos directamente de usted cuando nos escribe por WhatsApp o correo, cuando participa en una entrevista o diagnóstico y cuando contrata nuestros servicios. Este sitio web no tiene formularios y no recaba datos personales por sí mismo. El autodiagnóstico y la calculadora funcionan dentro de su navegador y no envían información a PAGI.</p>
+    <p>Los obtenemos directamente de usted cuando nos escribe por WhatsApp o correo, cuando participa en una entrevista o diagnóstico y cuando contrata nuestros servicios. Este sitio web no envía datos personales a ningún servidor de PAGI. El formulario de contacto sólo arma un mensaje de WhatsApp dentro de su navegador; el mensaje nos llega únicamente si usted decide enviarlo desde WhatsApp. El autodiagnóstico, la calculadora y el simulador de datos funcionan dentro de su navegador y no envían información a PAGI.</p>
 
     <h2>4. Finalidades necesarias</h2>
     <ul>
@@ -93,7 +96,7 @@
     <p>PAGI no vende sus datos personales ni los transfiere a terceros, salvo en los casos que la ley permite sin su consentimiento, como requerimientos de autoridad competente.</p>
 
     <h2>7. Cookies y almacenamiento en su dispositivo</h2>
-    <p>Este sitio no usa cookies, herramientas de analítica, publicidad ni rastreo. Sólo guarda en su propio navegador (almacenamiento local) sus preferencias de tema, idioma y animaciones, para recordarlas en su próxima visita. Esa información no se envía a PAGI y puede borrarla en cualquier momento desde la configuración de su navegador.</p>
+    <p>Este sitio no usa cookies, herramientas de analítica, publicidad ni rastreo. Sólo guarda en su propio navegador sus preferencias de tema, idioma y animaciones (almacenamiento local, para recordarlas en su próxima visita) y, mientras la pestaña esté abierta, sus respuestas del autodiagnóstico y los valores de la calculadora (almacenamiento de sesión, para conservarlos si cambia de idioma; se borran al cerrar la pestaña). Esa información no se envía a PAGI y puede borrarla en cualquier momento desde la configuración de su navegador.</p>
 
     <h2>8. Derechos ARCO</h2>
     <p>Usted puede acceder a sus datos, pedir que se rectifiquen si son inexactos, pedir su cancelación u oponerse a su tratamiento para fines específicos. Envíe su solicitud a pychan.desuyo@gmail.com con:</p>
@@ -128,6 +131,6 @@
     </nav>
   </div>
 </footer>
-<script src="/pagi/site.js?v=1" defer></script>
+<script src="/pagi/site.js?v=2" defer></script>
 </body>
 </html>
