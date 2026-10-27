@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>PAGI · Process and automation consulting for SMEs</title>
-<meta name="description" content="We help industrial and service SMEs in Jalisco, Mexico turn manual processes into organized, measurable and automated ones: assessments, report automation, KPI dashboards and documentation.">
+<title>PAGI · Process automation with Python, SQL and Power BI for SMEs</title>
+<meta name="description" content="Consulting for SMEs in Guadalajara, Mexico: process assessments, report automation with Python and SQL, Power BI dashboards and documentation. Try the self-check, the ROI calculator and the data-cleaning demo.">
 <link rel="canonical" href="https://kawaiidatadev.github.io/pagi/en/">
 <link rel="alternate" hreflang="es" href="https://kawaiidatadev.github.io/pagi/">
 <link rel="alternate" hreflang="en" href="https://kawaiidatadev.github.io/pagi/en/">
 <link rel="alternate" hreflang="x-default" href="https://kawaiidatadev.github.io/pagi/">
 <meta name="robots" content="index,follow">
-<meta name="theme-color" content="#0C5C50">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230C5C50'/%3E%3Cpath d='M14 20h14M14 32h14M14 44h14M28 20c8 0 8 12 14 12M28 44c8 0 8-12 14-12M28 32h14' stroke='%23F3D34A' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='32' r='5' fill='%23ffffff'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#0B1220">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230B1220'/%3E%3Cpath d='M12 20h14M12 32h14M12 44h14M26 20c8 0 8 12 14 12M26 44c8 0 8-12 14-12M26 32h14' stroke='%2338BDF8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='48' cy='32' r='6' fill='%23F59E0B'/%3E%3C/svg%3E">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PAGI">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="PAGI · Process and automation consulting for SMEs">
-<meta property="og:description" content="We help industrial and service SMEs in Jalisco, Mexico turn manual processes into organized, measurable and automated ones: assessments, report automation, KPI dashboards and documentation.">
+<meta property="og:title" content="PAGI · Process automation with Python, SQL and Power BI for SMEs">
+<meta property="og:description" content="Consulting for SMEs in Guadalajara, Mexico: process assessments, report automation with Python and SQL, Power BI dashboards and documentation. Try the self-check, the ROI calculator and the data-cleaning demo.">
 <meta property="og:url" content="https://kawaiidatadev.github.io/pagi/en/">
 <meta property="og:image" content="https://kawaiidatadev.github.io/pagi/og.png">
 <meta property="og:image:width" content="1200">
@@ -26,246 +26,302 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/pagi/style.css?v=1">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "PAGI", "alternateName": "PAGI · Procesos, Automatización, Gestión e Innovación", "url": "https://kawaiidatadev.github.io/pagi/", "image": "https://kawaiidatadev.github.io/pagi/og.png", "telephone": "+52 33 2439 3525", "email": "pychan.desuyo@gmail.com", "priceRange": "$5,000 - $35,000 MXN + IVA", "areaServed": {"@type": "AdministrativeArea", "name": "Zona Metropolitana de Guadalajara, Jalisco, México"}, "address": {"@type": "PostalAddress", "addressLocality": "Guadalajara", "addressRegion": "Jalisco", "addressCountry": "MX"}, "founder": {"@type": "Person", "name": "Luis Manuel Macías Patiño", "url": "https://kawaiidatadev.github.io/"}, "knowsAbout": ["Mejora de procesos", "Automatización de reportes", "Power BI", "Python", "SQL", "Documentación de procesos"]}</script>
+<link rel="stylesheet" href="/pagi/style.css?v=2">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "PAGI", "alternateName": "PAGI · Procesos automatizados con gestión e inteligencia", "url": "https://kawaiidatadev.github.io/pagi/", "image": "https://kawaiidatadev.github.io/pagi/og.png", "telephone": "+52 33 2439 3525", "email": "pychan.desuyo@gmail.com", "priceRange": "$5,000 - $35,000 MXN + IVA", "areaServed": {"@type": "AdministrativeArea", "name": "Zona Metropolitana de Guadalajara, Jalisco, México"}, "address": {"@type": "PostalAddress", "addressLocality": "Guadalajara", "addressRegion": "Jalisco", "addressCountry": "MX"}, "founder": {"@type": "Person", "name": "Luis Manuel Macías Patiño", "url": "https://kawaiidatadev.github.io/"}, "knowsAbout": ["Mejora de procesos", "Automatización de reportes", "Limpieza y validación de datos", "Power BI", "Power Query", "Python", "SQL", "Documentación de procesos"]}</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<div class="langbar" id="langbar" hidden><div class="wrap"><span>Este sitio también está en español.</span><a href="/pagi/" data-lang-ok hreflang="es">Ver en español</a><button type="button" data-lang-ok aria-label="Cerrar">×</button></div></div>
+<div class="langbar" id="langbar" hidden><div class="wrap"><span>Este sitio también está en español.</span><a href="/pagi/" data-lang-ok data-lang-link hreflang="es">Ver en español</a><button type="button" data-lang-ok aria-label="Cerrar">×</button></div></div>
 <header class="top">
   <div class="wrap nav">
-    <a class="brand" href="/pagi/en/" aria-label="PAGI, home"><b>PAGI</b><small>Process · Automation · Management · Innovation</small></a>
-    <a class="link" href="#servicios">Services</a><a class="link" href="#metodo">How we work</a><a class="link" href="#calculadora">Calculator</a><a class="link" href="#preguntas">FAQ</a>
+    <a class="brand" href="/pagi/en/" aria-label="PAGI, home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="12" fill="#0B1220"/><path d="M12 20h14M12 32h14M12 44h14M26 20c8 0 8 12 14 12M26 44c8 0 8-12 14-12M26 32h14" stroke="#38BDF8" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="48" cy="32" r="6" fill="#F59E0B"/></svg><b>PAGI</b><small>Automated processes with management and intelligence</small></a>
+    <nav class="links" aria-label="Sections"><a href="#autodiagnostico">Self-check</a><a href="#servicios">Services</a><a href="#calculadora">Calculator</a><a href="#datos">Data demo</a><a href="#metodo">Method</a><a href="#casos">Cases</a><a href="#contacto">Contact</a></nav>
     <div class="tools">
-      <a class="icon-btn" href="/pagi/" hreflang="es" lang="es" data-lang-ok title="Versión en español" aria-label="Versión en español">ES</a>
+      <a class="icon-btn" href="/pagi/" hreflang="es" lang="es" data-lang-ok data-lang-link title="Versión en español" aria-label="Versión en español">ES</a>
       <button class="icon-btn" type="button" id="theme-btn" aria-label="Change theme"></button>
       <button class="icon-btn" type="button" id="motion-btn" aria-label="Pause animations"></button>
-      <a class="btn primary cta-top" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a>
+      <a class="btn primary small cta-top" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a>
+      <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
+  <div class="mobile-menu" id="mobile-menu" hidden><div class="wrap"><nav aria-label="Sections"><a href="#autodiagnostico">Self-check</a><a href="#servicios">Services</a><a href="#calculadora">Calculator</a><a href="#datos">Data demo</a><a href="#metodo">Method</a><a href="#casos">Cases</a><a href="#contacto">Contact</a><a class="btn primary" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a></nav></div></div>
+  <span class="progress" id="progress" aria-hidden="true"></span>
 </header>
 <main id="main">
-  <section class="hero">
+  <section class="hero" id="inicio">
+    <canvas class="net" id="net" aria-hidden="true"></canvas>
     <div class="wrap hero-grid">
-      <div class="hero-copy rise">
-        <span class="label">Process and automation consulting · SMEs</span>
-        <h1>Clear processes, <mark class="hl">automated</mark> operations.</h1>
-        <p class="lead">We help industrial and service SMEs turn manual, scattered processes into organized, measurable and automated ones. We understand the problem first, then use only the technology that is actually needed.</p>
-        <div class="ctas">
-          <a class="btn primary" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">
+      <div class="hero-copy intro">
+        <span class="label fade">Process automation consulting · SMEs</span>
+        <h1><span class="ln"><span>Clear processes,</span></span><span class="ln"><span>automated</span></span><span class="ln"><span class="accent">operations.</span></span></h1>
+        <p class="lead fade d1">We turn hand-built reports, duplicate data entry and processes that depend on one person into organized, measurable, automated flows with Python, SQL, Excel and Power BI. We measure the problem first, then use only the technology that is needed.</p>
+        <div class="ctas fade d2">
+          <a class="btn primary" href="#autodiagnostico">Take the self-check</a>
+          <a class="btn ghost" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.8-1.3a.5.5 0 0 0 0-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7a2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .1-1.3c0-.1-.2-.2-.4-.3Z"/></svg>
-            Book an assessment
+            Message on WhatsApp
           </a>
-          <a class="btn ghost" href="#autodiagnostico">Take the 1-minute self-check</a>
         </div>
-        <p class="where">Guadalajara metro area, Jalisco, Mexico · On-site and remote projects</p>
+        <ul class="facts fade d3" aria-label="What we deliver">
+          <li>Measured baseline</li><li>Source code</li><li>Documentation</li><li>Training</li>
+        </ul>
+        <p class="where fade d4">Guadalajara metro area, Jalisco, Mexico · on-site and remote</p>
       </div>
 
-      <aside class="ficha rise" id="ficha" data-mode="manual" aria-label="Sample process sheet">
-        <div class="ficha-head">
-          <span class="label" style="color:var(--ink)">Process sheet · example</span>
+      <div class="console fade d2 intro" id="ficha" data-mode="manual" role="region" aria-label="Manual vs automated process comparison">
+        <div class="console-head">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="label">weekly_report · example</span>
           <div class="seg" role="group" aria-label="View the process">
-            <button type="button" data-mode="manual" aria-pressed="true">Today</button>
-            <button type="button" data-mode="auto" aria-pressed="false">With PAGI</button>
+            <button type="button" data-mode="manual" aria-pressed="true">Manual</button>
+            <button type="button" data-mode="auto" aria-pressed="false">Automated</button>
           </div>
         </div>
-        <div class="ficha-body">
-          <h3>Weekly production report</h3>
-          <svg class="pipe" id="pipe" data-anim viewBox="0 0 400 180" role="img" aria-label="Three data sources go through a middle step to build a report">
-            <path class="wire" d="M100 27 C130 27 130 80 158 80"/>
-            <path class="wire" d="M100 90 L158 90"/>
-            <path class="wire" d="M100 153 C130 153 130 100 158 100"/>
-            <path class="wire" d="M262 90 L304 90"/>
-            <circle class="dot" r="4.5"><animateMotion class="m" dur="5s" repeatCount="indefinite" path="M100 27 C130 27 130 80 158 80 L262 90 L304 90"/></circle>
-            <circle class="dot" r="4.5"><animateMotion class="m" dur="6s" begin="1.4s" repeatCount="indefinite" path="M100 90 L262 90 L304 90"/></circle>
-            <circle class="dot" r="4.5"><animateMotion class="m" dur="7s" begin="2.6s" repeatCount="indefinite" path="M100 153 C130 153 130 100 158 100 L262 90 L304 90"/></circle>
-            <circle class="dot err" r="4.5"><animateMotion dur="6.5s" begin="3.2s" repeatCount="indefinite" path="M100 90 L208 90 L208 182"/></circle>
-            <rect class="box src" x="8" y="10" width="92" height="34" rx="4"/><text x="54" y="31" text-anchor="middle">sales.xlsx</text>
-            <rect class="box src" x="8" y="73" width="92" height="34" rx="4"/><text x="54" y="94" text-anchor="middle">stock.csv</text>
-            <rect class="box src" x="8" y="136" width="92" height="34" rx="4"/><text x="54" y="157" text-anchor="middle">ERP</text>
-            <rect class="node" x="158" y="62" width="104" height="56" rx="8"/>
-            <text class="node-t t-manual" x="210" y="86" text-anchor="middle">copy and</text>
-            <text class="node-t t-manual" x="210" y="101" text-anchor="middle">paste by hand</text>
-            <text class="node-t t-auto" x="210" y="86" text-anchor="middle" visibility="hidden">automated</text>
-            <text class="node-t t-auto" x="210" y="101" text-anchor="middle" visibility="hidden">flow</text>
-            <rect class="out" x="304" y="72" width="88" height="36" rx="4"/><text class="out-t" x="348" y="94" text-anchor="middle">report</text>
-          </svg>
-          <div class="metrics" id="metrics">
-            <div><strong data-m="5 h" data-a="Once">5 h</strong><small data-m="per week consolidating" data-a="each piece of data is entered">per week consolidating</small></div>
-            <div><strong data-m="3" data-a="Auto">3</strong><small data-m="sources merged by hand" data-a="scheduled consolidation">sources merged by hand</small></div>
-            <div><strong data-m="2×" data-a="Measured">2×</strong><small data-m="entry of the same information" data-a="against the baseline">entry of the same information</small></div>
-          </div>
+        <div class="console-body">
+          <ol class="flow flowing" id="flow"></ol><span class="sr-only" id="mode-say" aria-live="polite"></span>
+          <div class="kpis" id="kpis"></div>
         </div>
-        <p class="ficha-foot">Illustrative example. Every project starts like this: we measure how the process works today so we can prove the result later.</p>
-      </aside>
+        <p class="console-foot"><span class="sim">Illustrative simulation</span> Your process's real figures are measured in the assessment.</p>
+      </div>
     </div>
   </section>
 
-  <section id="autodiagnostico" style="padding-top:0">
+  <div class="stack">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="label">Self-check</span>
-        <h2>Which of these happen at your company?</h2>
-        <p class="lead">Tick what sounds familiar and we'll tell you where we would start. Nothing is sent anywhere; it is calculated in your browser.</p>
+      <span class="label">Tools we work with</span>
+      <ul><li>Python</li><li>SQL</li><li>Excel · Power Query</li><li>Power BI</li><li>SAP Business One</li><li>Internal web apps</li></ul>
+    </div>
+  </div>
+
+  <section id="autodiagnostico">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Self-check · 7 questions</span>
+        <h2>Where does your time go?</h2>
+        <p class="lead">Answer how often each situation happens and we'll tell you where we would start. Answers are processed in your browser and are not sent anywhere.</p>
       </div>
       <div class="quiz">
-        <div class="pains" id="pains">
-          <button type="button" class="pain" aria-pressed="false" data-svc="S2" data-key="reports that take hours"><span class="label">Time</span><p>A report takes hours to put together every week or month.</p></button>
-          <button type="button" class="pain" aria-pressed="false" data-svc="S2" data-key="duplicate data entry"><span class="label">Rework</span><p>We enter the same information in several files or systems.</p></button>
-          <button type="button" class="pain" aria-pressed="false" data-svc="S2" data-key="data entry errors"><span class="label">Errors</span><p>We find entry errors after the data was already used to decide.</p></button>
-          <button type="button" class="pain" aria-pressed="false" data-svc="S4" data-key="processes that depend on one person"><span class="label">Dependency</span><p>Some processes only one person knows how to do.</p></button>
-          <button type="button" class="pain" aria-pressed="false" data-svc="S3" data-key="hand-made KPIs"><span class="label">KPIs</span><p>KPIs are prepared by hand before every meeting.</p></button>
-          <button type="button" class="pain" aria-pressed="false" data-svc="S4" data-key="undocumented procedures"><span class="label">Documentation</span><p>Procedures are not written down or no longer match reality.</p></button>
-          <button type="button" class="pain" aria-pressed="false" data-svc="S1" data-key="not knowing where to start"><span class="label">Direction</span><p>We know something is wrong, but not where to start.</p></button>
-        </div>
-        <aside class="reco" aria-live="polite">
-          <span class="label">Opportunity signals</span>
-          <div class="meter"><span id="meter"></span></div>
-          <p id="reco-count" class="label" style="color:var(--ink)">0 of 7</p>
-          <p class="empty" id="reco-empty">Tick at least one option to see the recommendation.</p>
-          <div id="reco-body" hidden>
-            <p style="margin-bottom:10px">We would start like this:</p>
-            <ol id="reco-list"></ol>
+        <form class="card qbox reveal" id="quiz" novalidate>
+          <div class="qprog">
+            <div class="label" style="color:var(--ink)" id="qcount">Question 1 of 7</div>
+            <div class="bar" role="progressbar" aria-labelledby="qcount" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="qbar"><span></span></div>
+            <div class="qdots" id="qdots" aria-label="Go to question"></div>
           </div>
-          <a class="btn primary" id="reco-cta" href="https://wa.me/523324393525" target="_blank" rel="noopener" hidden>Send this on WhatsApp</a>
+          <div id="qsteps"></div>
+          <p class="err" id="qerr" role="alert"></p>
+          <div class="qnav">
+            <button type="button" class="btn ghost" id="qprev">← Back</button>
+            <button type="button" class="btn blue" id="qnext">Next →</button>
+          </div>
+        </form>
+        <aside class="card result reveal" id="qresult" aria-live="polite" style="--d:1">
+          <span class="label">Result</span>
+          <p class="empty" id="qempty">Answer the 7 questions to see your result. Use the numbers to move between them.</p>
+          <div id="qout" hidden></div>
         </aside>
       </div>
     </div>
   </section>
 
-  <section id="metodo" class="cycle-band">
+  <section id="servicios" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="label">How we work</span>
-        <h2>A five-step cycle, always in the same order.</h2>
-        <p class="lead">We don't start with the tool. Technology is chosen in step three, once we know what needs solving.</p>
-      </div>
-      <div class="steps" role="tablist" aria-label="Method steps" id="steps">
-        <button role="tab" id="tab-1" aria-controls="step-panel" aria-selected="true"><span class="bar"></span><span class="n">01</span><span class="t">Analyze</span></button>
-        <button role="tab" id="tab-2" aria-controls="step-panel" aria-selected="false" tabindex="-1"><span class="bar"></span><span class="n">02</span><span class="t">Improve</span></button>
-        <button role="tab" id="tab-3" aria-controls="step-panel" aria-selected="false" tabindex="-1"><span class="bar"></span><span class="n">03</span><span class="t">Automate</span></button>
-        <button role="tab" id="tab-4" aria-controls="step-panel" aria-selected="false" tabindex="-1"><span class="bar"></span><span class="n">04</span><span class="t">Document</span></button>
-        <button role="tab" id="tab-5" aria-controls="step-panel" aria-selected="false" tabindex="-1"><span class="bar"></span><span class="n">05</span><span class="t">Measure</span></button>
-      </div>
-      <div class="step-panel" id="step-panel" role="tabpanel" aria-labelledby="tab-1">
-        <div style="display:grid;gap:10px"><h3 id="sp-t">Analyze</h3><p id="sp-d">We interview the person who does the work, the person responsible and the person who decides, and map the process as it works today.</p></div>
-        <div style="display:grid;gap:10px"><span class="label">What you get</span><ul id="sp-l"><li>Current process map</li><li>Times, frequencies and errors: the baseline</li></ul></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios">
-    <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <span class="label">Services</span>
         <h2>Almost everything starts with an assessment.</h2>
         <p class="lead">The assessment finds the problem, measures it and shows which service makes sense next. Fixed-scope project pricing, not hourly billing.</p>
       </div>
-      <div class="services">
-        <article class="svc entry" id="S1">
-          <div style="display:grid;gap:14px">
-            <div class="svc-top"><span class="code">S1</span><span class="tag">Starting point</span></div>
-            <h3>Process assessment</h3>
-            <p>For when you know something is hard but are not sure where the problem is or what it costs. We map the process, measure times, frequencies and errors, and rank opportunities by impact and ease.</p>
-          </div>
-          <dl class="svc-meta">
-            <dt>Deliverables</dt><dd>Current process diagram, ranked opportunities, estimated benefit of each and a proposed next step</dd>
-            <dt>Duration</dt><dd>1 to 2 weeks</dd>
-            <dt>Investment</dt><dd>$6,000 to $12,000 MXN + VAT</dd>
-          </dl>
-        </article>
-        <article class="svc" id="S2">
-          <div class="svc-top"><span class="code">S2</span></div>
-          <h3>Report automation and consolidation</h3>
-          <p>For teams that build reports by hand from several files or systems. We redesign the information flow and automate it.</p>
-          <dl class="svc-meta">
-            <dt>Deliverables</dt><dd>Working solution, source code, user manual, technical documentation and training</dd>
-            <dt>Duration</dt><dd>2 to 6 weeks</dd>
-            <dt>Investment</dt><dd>$18,000 to $35,000 MXN + VAT</dd>
-          </dl>
-        </article>
-        <article class="svc" id="S3">
-          <div class="svc-top"><span class="code">S3</span></div>
-          <h3>KPI dashboard</h3>
-          <p>For managers who need reliable KPIs without preparing them by hand. We define what to measure and for which decision, connect the sources and build the dashboard.</p>
-          <dl class="svc-meta">
-            <dt>Deliverables</dt><dd>Published dashboard (for example in Power BI), KPI dictionary and documented data model</dd>
-            <dt>Duration</dt><dd>2 to 5 weeks</dd>
-            <dt>Investment</dt><dd>$15,000 to $28,000 MXN + VAT</dd>
-          </dl>
-        </article>
-        <article class="svc" id="S4">
-          <div class="svc-top"><span class="code">S4</span></div>
-          <h3>Documentation and standardization</h3>
-          <p>For processes that depend on one person or are not written down. We map the process with the person who runs it and document the standard.</p>
-          <dl class="svc-meta">
-            <dt>Deliverables</dt><dd>Procedure, flowchart, step-by-step instructions, owners and checkpoints</dd>
-            <dt>Duration</dt><dd>1 to 4 weeks</dd>
-            <dt>Investment</dt><dd>$8,000 to $18,000 MXN + VAT</dd>
-          </dl>
-        </article>
-        <article class="svc" id="S5">
-          <div class="svc-top"><span class="code">S5</span></div>
-          <h3>Support and continuous improvement</h3>
-          <p>To maintain and extend a delivered solution when files, systems or needs change.</p>
-          <dl class="svc-meta">
-            <dt>Deliverables</dt><dd>Monthly block of hours and a monthly report of requests and KPIs</dd>
-            <dt>Duration</dt><dd>Monthly</dd>
-            <dt>Investment</dt><dd>$5,000 to $8,000 MXN + VAT per month</dd>
-          </dl>
-        </article>
-      </div>
+      <div class="services" id="svcs"></div>
       <p class="price-note">Prices in Mexican pesos, plus VAT. They are reference ranges based on process complexity and do not constitute an offer: the final price is set in the written proposal, after the assessment. Payment: 50% upfront and 50% on delivery.</p>
     </div>
   </section>
 
   <section id="calculadora" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="label">Calculator</span>
-        <h2>What does that manual process cost per year?</h2>
-        <p class="lead">Adjust the values using a real process at your company. It is the same calculation we use to decide whether a project is worth it.</p>
+      <div class="sec-head reveal">
+        <span class="label">Cost and return calculator</span>
+        <h2>What does that process cost today, and when would automating it pay off?</h2>
+        <p class="lead">Change the values using a real process. We separate the value of freed time from money you actually save: freed hours only become savings if that time is reused or avoids a cost.</p>
       </div>
       <div class="calc">
-        <form id="calc-form" novalidate>
-          <div class="field">
-            <label for="hrs">Hours per week spent on the task</label>
-            <div class="row"><input id="hrs" type="range" min="1" max="40" step="1" value="5"><output id="hrs-out" for="hrs">5 h</output></div>
-          </div>
-          <div class="field">
-            <label for="ppl">People who do it</label>
-            <div class="row"><input id="ppl" type="range" min="1" max="10" step="1" value="1"><output id="ppl-out" for="ppl">1</output></div>
-          </div>
-          <div class="field">
-            <label for="cost">Employee cost per hour (MXN)</label>
-            <div class="row"><input id="cost" type="number" min="30" max="2000" step="5" value="120" inputmode="numeric"></div>
-            <span class="hint">Monthly salary plus benefits, divided by hours worked. A $20,000 MXN monthly salary is roughly $120 per hour.</span>
-          </div>
-          <div class="field">
-            <label for="wks">Working weeks per year</label>
-            <div class="row"><input id="wks" type="range" min="40" max="52" step="1" value="48"><output id="wks-out" for="wks">48</output></div>
-          </div>
+        <form class="card reveal" id="calc" novalidate>
+          <div class="group-title"><span class="label" style="color:var(--ink)">Process data</span><span class="sim" id="calc-sim">Example values</span></div>
+          <fieldset><legend>Current situation</legend>
+            <div class="fields">
+              <div class="field"><label for="c-horas">Hours per week</label><input id="c-horas" inputmode="decimal" value="5" aria-describedby="e-horas"><span class="err" id="e-horas"></span></div>
+              <div class="field"><label for="c-personas">People involved</label><input id="c-personas" inputmode="numeric" value="1" aria-describedby="e-personas"><span class="err" id="e-personas"></span></div>
+              <div class="field"><label for="c-costoHora">Cost per hour (MXN)</label><input id="c-costoHora" inputmode="decimal" value="120" aria-describedby="h-costo e-costoHora"><span class="hint" id="h-costo">Salary plus benefits divided by hours worked. $20,000 MXN/month ≈ $120/hour.</span><span class="err" id="e-costoHora"></span></div>
+              <div class="field"><label for="c-semanas">Operating weeks per year</label><input id="c-semanas" inputmode="numeric" value="48" aria-describedby="e-semanas"><span class="err" id="e-semanas"></span></div>
+            </div>
+          </fieldset>
+          <fieldset><legend>Automation assumptions</legend>
+            <div class="fields">
+              <div class="field" style="grid-column:1/-1"><label for="c-reduccion">Potential reduction of manual work: <output id="o-reduccion" class="num">60%</output></label><input id="c-reduccion" type="range" min="0" max="95" step="5" value="60" aria-describedby="h-red"><span class="hint" id="h-red">Assumption. The real value is measured after the project.</span></div>
+              <div class="field"><label for="c-inversion">Initial investment (MXN)</label><input id="c-inversion" inputmode="decimal" value="25000" aria-describedby="h-inv e-inversion"><span class="hint" id="h-inv">Example within the S2 service range.</span><span class="err" id="e-inversion"></span></div>
+              <div class="field"><label for="c-recurrente">Recurring cost per year (MXN)</label><input id="c-recurrente" inputmode="decimal" value="0" aria-describedby="h-rec e-recurrente"><span class="hint" id="h-rec">Licenses, hosting or support. 0 if none.</span><span class="err" id="e-recurrente"></span></div>
+              <div class="field"><label for="c-anios">Evaluation horizon (years)</label><input id="c-anios" inputmode="numeric" value="3" aria-describedby="e-anios"><span class="err" id="e-anios"></span></div>
+            </div>
+          </fieldset>
+          <button type="button" class="btn ghost small" id="calc-reset">Reset example values</button>
         </form>
-        <div class="result">
-          <span class="label">Annual cost of the current process</span>
-          <div class="big" id="total" aria-live="polite">$28,800</div>
-          <div class="cal" id="cal" aria-hidden="true"></div>
-          <p class="cal-cap" id="cal-cap">Each square is a working day of the year. Colored squares are the days spent on this task.</p>
-          <div class="sheet-lines">
-            <div><span>Hours per year</span><span id="h-year">240 h</span></div>
-            <div><span>Equivalent to</span><span id="days">30</span></div>
-            <div><span>Monthly cost</span><span id="month">$2,400</span></div>
+
+        <div class="calc-out" id="calc-out" aria-live="polite">
+          <div class="group-title"><span class="label" style="color:var(--ink)">Today</span></div>
+          <div class="tiles">
+            <div class="tile"><span class="v" data-k="horasAnuales">—</span><span class="k">Hours per year on the task</span></div>
+            <div class="tile"><span class="v" data-k="costoActual">—</span><span class="k">Annual labor cost</span></div>
+            <div class="tile"><span class="v" data-k="dias">—</span><span class="k">Equivalent working days</span></div>
           </div>
-          <p class="note">This is what it costs today, not a promised saving. In the assessment we measure real times and estimate how much can be removed.</p>
+          <div class="chart">
+            <div class="cal" id="cal" role="img" aria-labelledby="cal-cap"></div>
+            <p class="muted" style="font-size:.85rem" id="cal-cap"></p>
+          </div>
+          <div class="group-title"><span class="label" style="color:var(--ink)">Middle scenario</span><span class="label" id="horizon-label"></span></div>
+          <div class="tiles">
+            <div class="tile"><span class="v" data-k="horasLiberadas">—</span><span class="k">Hours potentially freed per year</span></div>
+            <div class="tile"><span class="v" data-k="valorLiberado">—</span><span class="k">Value of freed time per year (not cash)</span></div>
+            <div class="tile"><span class="v" data-k="costoAutomatizado">—</span><span class="k">Annual cost with the automated process</span></div>
+            <div class="tile"><span class="v" data-k="inversion">—</span><span class="k">Initial investment</span></div>
+            <div class="tile key"><span class="v" data-k="beneficioNeto">—</span><span class="k">Net benefit over the horizon</span></div>
+            <div class="tile key"><span class="v" data-k="recuperacion">—</span><span class="k">Payback period</span></div>
+          </div>
+          <div class="chart" id="ch-annual">
+            <h3 style="font-size:1rem">Annual cost: current vs automated process</h3>
+            <svg id="svg-annual" viewBox="0 0 600 150" role="img" aria-labelledby="ch-annual-desc"></svg>
+            <p class="sr-only" id="ch-annual-desc"></p>
+            <ul class="legend"><li><i style="background:var(--orange)"></i>Manual work</li><li><i style="background:var(--blue)"></i>Recurring cost</li></ul>
+          </div>
+          <div class="chart" id="ch-cum">
+            <h3 style="font-size:1rem">Cumulative net benefit by scenario</h3>
+            <svg id="svg-cum" viewBox="0 0 600 240" role="img" aria-labelledby="ch-cum-desc"></svg>
+            <p class="sr-only" id="ch-cum-desc"></p>
+            <ul class="legend"><li class="s-cons"><i style="background:var(--s)"></i>Conservative</li><li class="s-mid"><i style="background:var(--s)"></i>Middle</li><li class="s-opt"><i style="background:var(--s)"></i>Optimistic</li><li style="color:var(--muted)"><i class="dash"></i>Break-even (0)</li></ul>
+          </div>
+          <div class="table-wrap" tabindex="0" role="region" aria-label="Scenario table">
+            <table id="scen-table"><caption class="sr-only">Scenario comparison</caption>
+              <thead><tr><th>Scenario</th><th class="n">Reduction</th><th class="n">Hours freed/yr</th><th class="n">Freed value/yr</th><th class="n">Net benefit</th><th class="n">Payback</th><th class="n">ROI</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <details class="formulas"><summary>How it is calculated</summary>
+            <ul>
+              <li><code>hours per year = hours per week × people × weeks</code></li>
+              <li><code>current cost = hours per year × cost per hour</code></li>
+              <li><code>freed hours = hours per year × reduction</code></li>
+              <li><code>freed value = freed hours × cost per hour</code> (value of time, not money saved)</li>
+              <li><code>automated cost = (hours per year − freed hours) × cost per hour + recurring cost</code></li>
+              <li><code>net benefit = (freed value − recurring cost) × years − investment</code></li>
+              <li><code>payback = investment ÷ monthly benefit</code> (only if the monthly benefit is positive)</li>
+              <li><code>ROI = net benefit ÷ (investment + recurring cost × years)</code></li>
+              <li>Scenarios: the chosen reduction × 0.6 (conservative), × 1 (middle) and × 1.3 capped at 95% (optimistic).</li>
+            </ul>
+          </details>
           <a class="btn primary" id="calc-cta" href="https://wa.me/523324393525" target="_blank" rel="noopener">I want to measure this process</a>
         </div>
       </div>
     </div>
   </section>
 
+  <section id="datos" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Demo · data cleaning and consolidation</span>
+        <h2>From a messy file to a reliable report.</h2>
+        <p class="lead">14 fictitious orders with the usual problems: stray spaces, mixed date formats, amounts with symbols, branches spelled several ways and a repeated id. The rules fix only what is safe; anything ambiguous goes to human review.</p>
+      </div>
+      <div class="console etl reveal" id="etl">
+        <div class="console-head">
+          <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
+          <span class="label">pedidos_marzo.csv → pedidos_limpios</span>
+          <span class="sim">Fictitious data · runs in your browser with JavaScript</span>
+        </div>
+        <div class="console-body">
+          <div class="etl-controls">
+            <button type="button" class="btn primary" id="etl-run">Run rules</button>
+            <button type="button" class="btn ghost" id="etl-reset" disabled>Reset</button>
+            <span class="label" id="etl-state" aria-live="polite">Original data</span>
+          </div>
+          <ol class="rules" id="rules"></ol>
+          <div class="etl-sum" id="etl-sum" hidden></div>
+          <div class="qbar" id="etl-qbar" hidden role="img"></div>
+          <div class="tabs" role="tablist" aria-label="Data view" id="etl-tabs">
+            <button role="tab" id="tab-before" aria-selected="true" aria-controls="etl-table">Before</button>
+            <button role="tab" id="tab-after" aria-selected="false" aria-controls="etl-table" disabled>After</button>
+            <button role="tab" id="tab-cons" aria-selected="false" aria-controls="etl-table" disabled>Consolidated</button>
+          </div>
+          <div id="etl-table" role="tabpanel" aria-labelledby="tab-before"></div>
+          <noscript><p>The simulator needs JavaScript.</p></noscript>
+        </div>
+        <p class="console-foot">In a real project these rules are written in Python or SQL, documented and scheduled against your files or ERP. Here they run in JavaScript inside your browser so you can watch them work.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="metodo" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">How we work</span>
+        <h2>Five stages, each with its own condition to move on.</h2>
+        <p class="lead">Technology is chosen in stage three, once we know what needs solving. Select a stage to see what happens in it.</p>
+      </div>
+      <div class="method">
+        <div class="steps reveal" role="tablist" aria-label="Method stages" id="steps"><span class="rail" id="rail" aria-hidden="true"></span></div>
+        <div class="card panel reveal" role="tabpanel" id="mpanel" tabindex="0"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="casos" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Cases and demos</span>
+        <h2>Real work, told in the same format.</h2>
+        <p class="lead">Projects the founder built in electronics manufacturing before PAGI, without confidential data or client names, plus the demos on this page.</p>
+      </div>
+      <div class="cases" id="cases-list">
+        <article class="case reveal"><span class="pill done">Completed · prior experience</span><h3>Classifying free-text failure records</h3>
+          <dl><dt>Problem</dt><dd>51,525 hand-written maintenance records that could not be analyzed by component.</dd>
+          <dt>Solution</dt><dd>Natural-language model trained on 139 hand-labeled records to identify the replaced component.</dd>
+          <dt>Validation</dt><dd>Evaluated against labeled records: 86.8% precision and 88.2% recall.</dd>
+          <dt>Result</dt><dd>2,992 failures segmented by component, a basis to prioritize maintenance.</dd></dl>
+          <ul class="techs"><li>Python</li><li>NLP</li><li>SQL</li></ul></article>
+        <article class="case reveal" style="--d:1"><span class="pill done">Completed · prior experience</span><h3>Bill of materials migration to SAP Business One</h3>
+          <dl><dt>Problem</dt><dd>Thousands of bills of materials in a legacy system that had to move to the new ERP.</dd>
+          <dt>Solution</dt><dd>Automated extraction via web scraping and conversion to SAP's import format.</dd>
+          <dt>Validation</dt><dd>Recursive BOM-explosion algorithm to check consumption for 3,093 products over a production year.</dd>
+          <dt>Result</dt><dd>3,660 bills of materials extracted and converted in 5 to 6 days of continuous run time.</dd></dl>
+          <ul class="techs"><li>Python</li><li>Web scraping</li><li>SAP Business One</li></ul></article>
+        <article class="case reveal"><span class="pill done">Completed · prior experience</span><h3>Maintenance management system</h3>
+          <dl><dt>Problem</dt><dd>Work orders, preventive plans, inventory and line stops spread across files.</dd>
+          <dt>Solution</dt><dd>Internal web app with a database, PDF reports and a local AI assistant.</dd>
+          <dt>Validation</dt><dd>Version-controlled development: 184 commits in 51 days.</dd>
+          <dt>Result</dt><dd>One place for maintenance information, with history and reports.</dd></dl>
+          <ul class="techs"><li>Python · Flask</li><li>MySQL</li><li>Docker</li></ul></article>
+        <article class="case reveal" style="--d:1"><span class="pill done">Completed · prior experience</span><h3>Bank transactions platform</h3>
+          <dl><dt>Problem</dt><dd>Treasury and Accounting loaded bank statements by hand, without traceability.</dd>
+          <dt>Solution</dt><dd>Web platform with validation, versioning and an audit trail for every upload.</dd>
+          <dt>Validation</dt><dd>Automated tests and continuous integration.</dd>
+          <dt>Result</dt><dd>Traceable uploads: who uploaded what and when is recorded.</dd></dl>
+          <ul class="techs"><li>Flask</li><li>MySQL</li><li>pytest</li><li>Jenkins</li></ul></article>
+        <article class="case reveal"><span class="pill demo">Demo on this page</span><h3>Order cleaning and consolidation</h3>
+          <dl><dt>Problem</dt><dd>Data with mixed formats and duplicates.</dd>
+          <dt>Solution</dt><dd>Six explicit rules that separate safe fixes from cases for review.</dd>
+          <dt>Validation</dt><dd>Deterministic output, covered by automated tests.</dd>
+          <dt>Result</dt><dd><a href="#datos">Try it above</a></dd></dl>
+          <ul class="techs"><li>JavaScript</li><li>Data quality rules</li></ul></article>
+        <article class="case reveal" style="--d:1"><span class="pill demo">Demo on this page</span><h3>Cost and return calculator</h3>
+          <dl><dt>Problem</dt><dd>Deciding whether automating a process is worth it.</dd>
+          <dt>Solution</dt><dd>Model with published formulas and three scenarios.</dd>
+          <dt>Validation</dt><dd>Formulas checked with unit tests and edge cases.</dd>
+          <dt>Result</dt><dd><a href="#calculadora">Use it above</a></dd></dl>
+          <ul class="techs"><li>JavaScript</li><li>SVG</li></ul></article>
+      </div>
+      <p class="case-note">Figures from prior projects come from the founder's own records; no internal data from the company where they were done is published.</p>
+    </div>
+  </section>
+
   <section id="piloto" style="padding-top:0">
     <div class="wrap">
-      <div class="pilot">
+      <div class="pilot reveal">
         <div class="count" aria-hidden="true"><i></i><i></i><i></i></div>
         <div style="display:grid;gap:8px">
           <span class="label">Pilot program</span>
@@ -279,12 +335,12 @@
 
   <section id="principios" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <span class="label">Principles</span>
         <h2>How we decide, even when it doesn't suit us.</h2>
       </div>
       <div class="principles">
-        <div class="vals">
+        <div class="vals reveal">
           <div class="val"><b>Process before technology</b><span>We don't propose a tool before we understand where the problem is.</span></div>
           <div class="val"><b>Measure to prove</b><span>Every project has a baseline and a measured result. If something can't be measured, we say so.</span></div>
           <div class="val"><b>Deliver it complete</b><span>A solution isn't finished without documentation, a manual and training.</span></div>
@@ -292,7 +348,7 @@
           <div class="val"><b>Honesty</b><span>If a project isn't right for you or we can't do it, we tell you before charging.</span></div>
           <div class="val"><b>Confidentiality</b><span>Your information is used only for your project and protected as our own.</span></div>
         </div>
-        <aside class="nots">
+        <aside class="card nots reveal" style="--d:1">
           <span class="label">What we don't do</span>
           <ul>
             <li>Sell a specific technology or licenses on commission.</li>
@@ -308,40 +364,35 @@
 
   <section id="equipo" style="padding-top:0">
     <div class="wrap founder">
-      <div style="display:grid;gap:16px">
+      <div class="reveal" style="display:grid;gap:16px">
         <span class="label">Who is behind it</span>
         <h2>Process engineering and data in one person.</h2>
         <p class="lead">Luis Manuel Macías Patiño, founding partner. Over six years in electronics manufacturing, from equipment maintenance to plant software and analytics.</p>
-        <div class="creds">
-          <div>Master's degree in Data Science</div>
-          <div>Industrial Maintenance Engineering degree</div>
-          <div>Electromechanical technician</div>
-          <div>Python, SQL, Power BI, Power Query, SAP Business One</div>
-        </div>
         <p><a class="btn ghost" href="https://kawaiidatadev.github.io/en/" target="_blank" rel="noopener">See portfolio and projects</a></p>
       </div>
-      <div class="built">
-        <span class="label">Experience before PAGI</span>
-        <article><h3>Reports that were built by hand</h3><p>Automated production, shipping and staffing reports with Python, VBA and Power Query, plus monthly quality KPIs.</p></article>
-        <article><h3>Data migration to an ERP</h3><p>Automated extraction of thousands of bills of materials and their conversion to SAP Business One format.</p></article>
-        <article><h3>Custom internal systems</h3><p>Web systems for maintenance and treasury, with validation, audit trail and documentation.</p></article>
-        <article><h3>Data nobody read</h3><p>Automatic classification of thousands of free-text failure records to learn what was replaced and why.</p></article>
+      <div class="creds card reveal" style="padding:22px;--d:1">
+        <span class="label">Education</span>
+        <div>Master's degree in Data Science</div>
+        <div>Industrial Maintenance Engineering degree</div>
+        <div>Electromechanical technician</div>
+        <div>Python, SQL, Power BI, Power Query, SAP Business One</div>
       </div>
     </div>
   </section>
 
   <section id="preguntas" style="padding-top:0">
     <div class="wrap">
-      <div class="sec-head">
+      <div class="sec-head reveal">
         <span class="label">FAQ</span>
         <h2>Before you write to us.</h2>
       </div>
       <div class="faq">
-        <details><summary>Do I have to change systems or buy licenses?</summary><p>No. We work with what you already use: Excel, your ERP, your databases or your email. We only recommend a new tool if the assessment shows it is needed, and we take no commission on licenses.</p></details>
-        <details><summary>Do I get the source code?</summary><p>Yes. In automation projects we deliver the working solution, the project's source code, documentation and training. Ownership passes to your company once the project is paid in full. The exact scope is set in writing in each proposal.</p></details>
-        <details><summary>What happens to my company's information?</summary><p>It is used only for your project and returned or deleted at the end. We can sign a non-disclosure agreement before reviewing sensitive processes or data.</p></details>
-        <details><summary>How does payment work?</summary><p>Fixed-scope project price: 50% upfront to start and 50% on delivery. Monthly support is billed monthly. Published prices are plus VAT.</p></details>
-        <details><summary>My company is small. Is it worth it?</summary><p>If a task takes several hours a week, probably yes. Use the calculator with your numbers; if the annual cost is lower than the project, we will tell you.</p></details>
+        <details><summary>Do I have to change systems or buy licenses?</summary><div class="ans"><p>No. We work with what you already use: Excel, your ERP, your databases or your email. We only recommend a new tool if the assessment shows it is needed, and we take no commission on licenses.</p></div></details>
+        <details><summary>Do I get the source code?</summary><div class="ans"><p>Yes. In automation projects we deliver the working solution, the project's source code, documentation and training. Ownership passes to your company once the project is paid in full. The exact scope is set in writing in each proposal.</p></div></details>
+        <details><summary>Do you use artificial intelligence?</summary><div class="ans"><p>Only when it adds something measurable, for example to classify free text. We don't load confidential information into AI tools that keep it or train on it without your permission.</p></div></details>
+        <details><summary>What happens to my company's information?</summary><div class="ans"><p>It is used only for your project and returned or deleted at the end. We can sign a non-disclosure agreement before reviewing sensitive processes or data.</p></div></details>
+        <details><summary>How does payment work?</summary><div class="ans"><p>Fixed-scope project price: 50% upfront to start and 50% on delivery. Monthly support is billed monthly. Published prices are plus VAT.</p></div></details>
+        <details><summary>My company is small. Is it worth it?</summary><div class="ans"><p>If a task takes several hours a week, probably yes. Use the calculator with your numbers; if the benefit doesn't cover the investment in a reasonable time, we will tell you.</p></div></details>
       </div>
     </div>
   </section>
@@ -349,12 +400,10 @@
 
 <section class="contact" id="contacto">
   <div class="wrap contact-grid">
-    <div style="display:grid;gap:16px">
+    <div style="display:grid;gap:16px" class="reveal">
       <span class="label">Contact</span>
       <h2>Tell us which process takes up most of your time.</h2>
       <p class="lead">A 30-minute call is enough to know whether we can help. If we can't, we will tell you.</p>
-    </div>
-    <div class="contact-box">
       <span class="label">WhatsApp</span>
       <div class="phone" id="phone">+52 33 2439 3525</div>
       <div class="ctas">
@@ -362,147 +411,113 @@
         <button class="btn ghost" type="button" id="copy">Copy number</button>
       </div>
       <span class="copied" id="copied" aria-live="polite"></span>
-      <p class="privacy-short">If you write to us, Luis Manuel Macías Patiño (PAGI) will use your contact details and what you share to answer your request, prepare proposals and, if you hire us, deliver and invoice the service. Read the full <a href="/pagi/en/privacy/">privacy notice</a>.</p>
     </div>
+    <form class="cform reveal" id="cform" novalidate style="--d:1">
+      <span class="label">Prepare your message</span>
+      <p class="privacy-short" style="font-size:.9rem">The form builds a WhatsApp message in your browser. Nothing is stored or sent to any server: you decide whether to send it from WhatsApp.</p>
+      <div class="two">
+        <div class="field"><label for="f-nombre">Name *</label><input id="f-nombre" autocomplete="name" maxlength="80" required aria-describedby="fe-nombre"><span class="err" id="fe-nombre"></span></div>
+        <div class="field"><label for="f-empresa">Company (optional)</label><input id="f-empresa" autocomplete="organization" maxlength="80"></div>
+      </div>
+      <div class="field"><label for="f-tema">What are you interested in?</label>
+        <select id="f-tema">
+          <option value="S1">Process assessment</option>
+          <option value="S2">Report automation</option>
+          <option value="S3">KPI dashboard</option>
+          <option value="S4">Process documentation</option>
+          <option value="S5">Support and continuous improvement</option>
+          <option value="piloto">Pilot program</option>
+          <option value="otro">Something else</option>
+        </select></div>
+      <div class="field"><label for="f-msg">Which process do you want to improve? *</label><textarea id="f-msg" maxlength="600" required aria-describedby="fh-msg fe-msg"></textarea><span class="hint" id="fh-msg">Between 10 and 600 characters. Don't include sensitive data. <span id="f-count" class="num">0/600</span></span><span class="err" id="fe-msg"></span></div>
+      <label class="check off" id="l-quiz"><input type="checkbox" id="f-quiz" disabled> <span>Include my self-check result (complete it first)</span></label>
+      <label class="check" id="l-calc"><input type="checkbox" id="f-calc"> <span>Include the calculator summary</span></label>
+      <button type="submit" class="btn primary">Open in WhatsApp</button>
+      <div class="status" id="f-status" role="status" hidden></div>
+      <p class="privacy-short">If you write to us, Luis Manuel Macías Patiño (PAGI) will use your contact details and what you share to answer your request, prepare proposals and, if you hire us, deliver and invoice the service. Read the full <a href="/pagi/en/privacy/">privacy notice</a>.</p>
+    </form>
+  </div>
+</section>
+<section class="final" style="padding:0">
+  <div class="wrap">
+    <h2 style="font-size:clamp(1.4rem,3vw,1.9rem)">Not sure where to start?</h2>
+    <a class="btn primary" href="#autodiagnostico">Take the self-check</a>
   </div>
 </section>
 
-<script>
-(function () {
-  var $ = function (id) { return document.getElementById(id); };
-  var LANG = document.documentElement.lang;
-  var fmt = new Intl.NumberFormat(LANG === 'es' ? 'es-MX' : 'en-US', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 });
-  var num = new Intl.NumberFormat(LANG === 'es' ? 'es-MX' : 'en-US', { maximumFractionDigits: 0 });
-  var WA = 'https://wa.me/523324393525?text=';
-  function still() { return window.pagiMotionOff && window.pagiMotionOff(); }
-
-  /* 1. Ficha: Hoy / Con PAGI */
-  var ficha = $('ficha'), pipe = $('pipe');
-  var DUR = { manual: ['5s', '6s', '7s'], auto: ['1.6s', '1.9s', '2.2s'] };
-  ficha.querySelectorAll('.seg button').forEach(function (b) {
-    b.addEventListener('click', function () {
-      var mode = b.dataset.mode;
-      ficha.dataset.mode = mode;
-      ficha.querySelectorAll('.seg button').forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
-      pipe.querySelectorAll('animateMotion.m').forEach(function (m, i) { m.setAttribute('dur', DUR[mode][i]); });
-      pipe.querySelectorAll('.t-manual').forEach(function (t) { t.setAttribute('visibility', mode === 'manual' ? 'visible' : 'hidden'); });
-      pipe.querySelectorAll('.t-auto').forEach(function (t) { t.setAttribute('visibility', mode === 'auto' ? 'visible' : 'hidden'); });
-      $('metrics').querySelectorAll('[data-m]').forEach(function (el) {
-        el.textContent = mode === 'auto' ? el.dataset.a : el.dataset.m;
-        el.classList.remove('swap'); void el.offsetWidth; el.classList.add('swap');
-      });
-    });
-  });
-
-  /* 2. Autodiagnóstico */
-  var NAMES = {
-    S1: 'Process assessment',
-    S2: 'Report automation and consolidation',
-    S3: 'KPI dashboard',
-    S4: 'Documentation and standardization'
-  };
-  var pains = [].slice.call(document.querySelectorAll('#pains .pain'));
-  function reco() {
-    var on = pains.filter(function (p) { return p.getAttribute('aria-pressed') === 'true'; });
-    $('meter').style.width = (on.length / pains.length * 100) + '%';
-    $('reco-count').textContent = on.length + ' of ' + pains.length;
-    document.querySelectorAll('.svc.hi').forEach(function (s) { s.classList.remove('hi'); });
-    if (!on.length) { $('reco-empty').hidden = false; $('reco-body').hidden = true; $('reco-cta').hidden = true; return; }
-    var score = {};
-    on.forEach(function (p) { score[p.dataset.svc] = (score[p.dataset.svc] || 0) + 1; });
-    var next = Object.keys(score).filter(function (k) { return k !== 'S1'; }).sort(function (a, b) { return score[b] - score[a]; });
-    var plan = ['S1'].concat(next);
-    $('reco-list').innerHTML = plan.map(function (k) { return '<li><a href="#' + k + '">' + k + ' · ' + NAMES[k] + '</a></li>'; }).join('');
-    plan.forEach(function (k) { var el = $(k); if (el) el.classList.add('hi'); });
-    $('reco-empty').hidden = true; $('reco-body').hidden = false; $('reco-cta').hidden = false;
-    var msg = 'Hi, I took the PAGI self-check. At my company we have: ' +
-      on.map(function (p) { return p.dataset.key; }).join(', ') + '. I am interested in an assessment.';
-    $('reco-cta').href = WA + encodeURIComponent(msg);
-  }
-  pains.forEach(function (p) {
-    p.addEventListener('click', function () { p.setAttribute('aria-pressed', p.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); reco(); });
-  });
-  reco();
-
-  /* 3. Ciclo de cinco pasos con avance automático */
-  var STEPS = [
-    ['Analyze', 'We interview the person who does the work, the person responsible and the person who decides, and map the process as it works today.', ['Current process map', 'Times, frequencies and errors: the baseline']],
-    ['Improve', 'We remove unnecessary steps and duplicate entry before automating anything. Automating a bad process only makes it fail faster.', ['Proposed process', 'Opportunities ranked by impact and ease']],
-    ['Automate', 'With the simplest tool that solves it: Excel and Power Query, Python, SQL or integration with your ERP.', ['Working solution', 'Project source code']],
-    ['Document', 'Procedure, user manual and training. You shouldn\'t depend on us to run what we deliver.', ['User manual', 'Technical documentation', 'Team training']],
-    ['Measure', 'We compare against the baseline: hours, errors or time to get the information. If it didn\'t improve, we say so.', ['Measured before-and-after result', 'KPI for follow-up']]
-  ];
-  var tabs = [].slice.call(document.querySelectorAll('#steps [role=tab]')), cur = 0, timer = null, auto = true, DWELL = 4500;
-  function show(i, fromUser) {
-    cur = i;
-    tabs.forEach(function (t, k) {
-      t.setAttribute('aria-selected', k === i ? 'true' : 'false');
-      t.tabIndex = k === i ? 0 : -1;
-      t.classList.remove('run');
-    });
-    var s = STEPS[i];
-    $('sp-t').textContent = s[0]; $('sp-d').textContent = s[1];
-    $('sp-l').innerHTML = s[2].map(function (x) { return '<li>' + x + '</li>'; }).join('');
-    $('step-panel').setAttribute('aria-labelledby', tabs[i].id);
-    [$('sp-t'), $('sp-d'), $('sp-l')].forEach(function (el) { el.classList.remove('swap'); void el.offsetWidth; el.classList.add('swap'); });
-    if (fromUser) auto = false;
-    schedule();
-  }
-  function schedule() {
-    clearTimeout(timer);
-    if (!auto || still()) return;
-    void tabs[cur].offsetWidth; tabs[cur].style.setProperty('--dur', DWELL + 'ms'); tabs[cur].classList.add('run');
-    timer = setTimeout(function () { show((cur + 1) % tabs.length); }, DWELL);
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { show(i, true); });
-    t.addEventListener('keydown', function (e) {
-      var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0;
-      if (d) { e.preventDefault(); var n = (cur + d + tabs.length) % tabs.length; show(n, true); tabs[n].focus(); }
-    });
-  });
-  document.addEventListener('pagi:motion', function () { schedule(); });
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { es.forEach(function (e) { if (e.isIntersecting) schedule(); else clearTimeout(timer); }); }, { threshold: .3 }).observe($('steps'));
-  } else schedule();
-
-  /* 4. Calculadora con calendario de días */
-  var cal = $('cal'), shown = 0, raf = null;
-  function tween(to) {
-    cancelAnimationFrame(raf);
-    if (still()) { shown = to; $('total').textContent = fmt.format(to); return; }
-    var from = shown, t0 = performance.now();
-    (function step(t) {
-      var k = Math.min(1, (t - t0) / 450), v = from + (to - from) * (1 - Math.pow(1 - k, 3));
-      shown = v; $('total').textContent = fmt.format(Math.round(v));
-      if (k < 1) raf = requestAnimationFrame(step);
-    })(t0);
-    setTimeout(function () { if (shown !== to) { cancelAnimationFrame(raf); shown = to; $('total').textContent = fmt.format(to); } }, 600);
-  }
-  function calc() {
-    var h = +$('hrs').value, p = +$('ppl').value, w = +$('wks').value, c = Math.max(0, +$('cost').value || 0);
-    var hy = h * p * w, total = hy * c, days = hy / 8, cells = w * 5;
-    $('hrs-out').textContent = h + ' h'; $('ppl-out').textContent = p; $('wks-out').textContent = w;
-    tween(total);
-    $('h-year').textContent = num.format(hy) + ' h';
-    $('days').textContent = num.format(days) + ' working days';
-    $('month').textContent = fmt.format(total / 12);
-    while (cal.children.length < cells) cal.appendChild(document.createElement('i'));
-    while (cal.children.length > cells) cal.removeChild(cal.lastChild);
-    var fill = Math.min(cells, Math.round(days));
-    [].forEach.call(cal.children, function (el, i) { el.classList.toggle('on', i < fill); });
-    $('cal-cap').textContent = fill >= cells
-      ? 'This task takes every working day of the year: more than one full-time person.'
-      : 'Each square is a working day of the year. Colored squares are the days spent on this task.';
-    var msg = 'Hi, I used the PAGI calculator: a process of ' + h + ' h per week' +
-      (p > 1 ? ' across ' + p + ' people' : '') + ' costs us about ' + fmt.format(total) + ' per year. I am interested in an assessment.';
-    $('calc-cta').href = WA + encodeURIComponent(msg);
-  }
-  ['hrs', 'ppl', 'wks', 'cost'].forEach(function (id) { $(id).addEventListener('input', calc); });
-  $('calc-form').addEventListener('submit', function (e) { e.preventDefault(); });
-  shown = 28800; calc();
-})();
-</script>
+<script type="application/json" id="i18n">{
+"stages":[
+ {"t":"Files","m":"3 sources: Excel, CSV and ERP","a":"Same sources, untouched"},
+ {"t":"Extraction","m":"Copy and paste by hand","a":"Automatic read (Python or Power Query)"},
+ {"t":"Validation","m":"Eyeball check, if there's time","a":"Explicit rules; doubtful rows flagged"},
+ {"t":"Consolidation","m":"Formulas and manual pasting","a":"SQL query or data model"},
+ {"t":"Report","m":"Formatted by hand every week","a":"Scheduled, with history"}],
+"chipM":"✋ manual","chipA":"⚙ automated",
+"kpiM":[ ["5 h","per week building the report"],["2×","the same data is entered"],["Late","errors show up when data is used"]],
+"kpiA":[ ["Measured","against the assessment baseline"],["1×","each value entered once"],["At validation","errors flagged before the report"]],
+"modeSay":{"manual":"View: manual process","auto":"View: automated process"},
+"q":[
+ {"id":"reportes","q":"Does any report take hours to put together every week or month?"},
+ {"id":"captura","q":"Do you enter the same information in several files or systems?"},
+ {"id":"errores","q":"Do you find entry errors after the data was already used to decide?"},
+ {"id":"dependencia","q":"Are there processes only one person knows how to do?"},
+ {"id":"kpis","q":"Are KPIs prepared by hand before every meeting?"},
+ {"id":"documentacion","q":"Are written procedures missing, or out of date?"},
+ {"id":"rumbo","q":"Do you feel something is wrong but don't know where to start?"}],
+"opts":["Never or almost never","Sometimes","Often (every week)"],
+"qOf":"of","qQuestion":"Question","qNeed":"Choose an answer to continue.","qSee":"See result","qNext":"Next →",
+"qGo":"Go to question","qAnswered":"answered",
+"lv":{"alto":"High","medio":"Medium","bajo":"Low"},
+"lvTxt":{"alto":"There are several frequent signs of manual work worth measuring soon.","medio":"There are clear opportunities, though not all are urgent.","bajo":"Few signs of manual work. You may not need a project right now."},
+"rLevel":"Opportunity level","rPoints":"points","rTop":"What weighs most","rNoTop":"No situation happens often.","rRecs":"Recommendations","rNext":"Next step",
+"rNextS1":"A process assessment (S1) to measure the baseline and confirm whether the suggested service makes sense.",
+"rNextNone":"We don't see a clear signal. Retake the self-check if something changes.",
+"rSugg":"Suggested service after the assessment","rReview":"Review answers","rRestart":"Restart","rSend":"Send summary on WhatsApp",
+"rNote":"This is guidance based on simple rules, not an audit or a savings guarantee.",
+"rHow":"How it is calculated",
+"rHowTxt":"Each answer is worth 0, 1 or 2 points and adds to the related service. Total 0–4: low; 5–8: medium; 9–14: high. The suggested service is the one with the most points among S2, S3 and S4 (ties broken in that order).",
+"recs":{"reportes":"Automate the report's consolidation and formatting.","captura":"Enter each value once and connect the files.","errores":"Add validation rules before data is used.","dependencia":"Document the process with the person who runs it today.","kpis":"Define the KPIs and connect them to their sources.","documentacion":"Write the standard procedure and its checkpoints.","rumbo":"Measure first: map the process and prioritize."},
+"short":{"reportes":"reports that take hours","captura":"duplicate entry","errores":"errors found late","dependencia":"dependence on one person","kpis":"hand-made KPIs","documentacion":"undocumented procedures","rumbo":"not knowing where to start"},
+"svcName":{"S1":"Process assessment","S2":"Report automation and consolidation","S3":"KPI dashboard","S4":"Documentation and standardization","S5":"Support and continuous improvement","piloto":"Pilot program","otro":"Something else"},
+"waQuiz":"Hi, I took the PAGI self-check.","waLevel":"Level","waTop":"What weighs most","waSugg":"Suggested service","waWant":"I am interested in an assessment.",
+"services":[
+ {"id":"S1","entry":true,"name":"Process assessment","sum":"For when you know something is hard but are not sure where the problem is or what it costs.","dur":"1 to 2 weeks","price":"$6,000 to $12,000 MXN + VAT",
+  "prob":"Manual work, errors or rework without a clear measure of their cost.","when":"Before investing in any tool or project.","deliv":["Current process diagram","Baseline: times, frequencies and errors","Ranked opportunities with estimated benefit"],"need":"Access to the person who does the work and the decision maker, plus real file samples.","lim":"Does not include building the solution; it ends with a proposal.","next":"Schedule 1-hour interviews with the team involved."},
+ {"id":"S2","name":"Report automation and consolidation","sum":"For teams that build reports by hand from several files or systems.","dur":"2 to 6 weeks","price":"$18,000 to $35,000 MXN + VAT",
+  "prob":"Information entered several times and reports that take hours.","when":"When the report repeats with the same structure every week or month.","deliv":["Working solution and source code","User manual and technical documentation","Team training"],"need":"Sample files, read access to the sources and a person who owns the report.","lim":"If sources change structure without notice, the solution needs adjustments.","next":"An assessment (S1) or, if already measured, a fixed-scope proposal."},
+ {"id":"S3","name":"KPI dashboard","sum":"For managers who need reliable KPIs without preparing them by hand.","dur":"2 to 5 weeks","price":"$15,000 to $28,000 MXN + VAT",
+  "prob":"KPIs built by hand or from data in different systems.","when":"When a recurring decision depends on those KPIs.","deliv":["Published dashboard (for example in Power BI)","KPI dictionary: definition, formula, source and frequency","Documented data model"],"need":"List of decisions the dashboard must support and access to the sources.","lim":"A KPI is only as reliable as its source; if the source is poor, data entry is fixed first.","next":"Define 5 to 10 priority KPIs in a working session."},
+ {"id":"S4","name":"Documentation and standardization","sum":"For processes that depend on one person or are not written down.","dur":"1 to 4 weeks","price":"$8,000 to $18,000 MXN + VAT",
+  "prob":"Knowledge held by one person and missing or outdated procedures.","when":"Before automating, or when a key person is leaving or changing roles.","deliv":["Written procedure and flowchart","Step-by-step instructions","Owners and checkpoints"],"need":"Time with the person who runs the process today.","lim":"It does not replace a certified management system; it documents the real process.","next":"Pick the process with the highest dependency risk."},
+ {"id":"S5","name":"Support and continuous improvement","sum":"To maintain and extend a delivered solution when files, systems or needs change.","dur":"Monthly","price":"$5,000 to $8,000 MXN + VAT per month",
+  "prob":"Solutions that stop working when something changes.","when":"After a delivery, if the process keeps evolving.","deliv":["Monthly block of hours for adjustments","Monthly report of requests and KPIs"],"need":"A solution delivered by PAGI or documented by the client.","lim":"Unused hours don't roll over unless agreed in writing.","next":"Review the current solution and agree on the block of hours."}],
+"svcL":{"dur":"Duration","price":"Investment","prob":"What it solves","when":"When it fits","deliv":"Deliverables","need":"What we need to start","lim":"Limitations","next":"Next step","more":"See details","less":"Hide details","entry":"Starting point","reco":"Suggested for you","ask":"Ask about this service"},
+"method":[
+ {"t":"Analyze","obj":"Understand how the process works today and what it costs.","act":["Interviews with the doer, the owner and the decision maker","Current process mapping","Measuring times, frequencies and errors"],"in":["Real files and reports","Access to the people involved"],"out":["Current process diagram","Measured baseline"],"ok":["The client recognizes the process in the diagram","The baseline has units and a source"],"gate":"The problem is measurable and the client wants to solve it."},
+ {"t":"Improve","obj":"Remove unnecessary steps before automating anything.","act":["Remove duplicate entry and steps with no value","Design the proposed process","Prioritize by impact and ease"],"in":["Diagram and baseline from stage 1"],"out":["Proposed process","Impact and effort matrix"],"ok":["Every change has an owner","The client approves the proposed process"],"gate":"Proposal accepted with scope and price in writing."},
+ {"t":"Automate","obj":"Build the simplest solution that solves the problem.","act":["Choose the tool: Excel and Power Query, Python, SQL or the ERP","Develop under version control","Test with real anonymized data where possible"],"in":["Approved process","Read access to sources"],"out":["Working solution","Project source code"],"ok":["Passes the agreed tests","Works with the client's real files"],"gate":"The client validates the solution with real data."},
+ {"t":"Document","obj":"Make sure the client can run the solution without depending on PAGI.","act":["Write the user manual","Document installation and configuration","Train the team"],"in":["Validated solution"],"out":["User manual","Technical documentation","Training session"],"ok":["Someone else runs the process using the documentation"],"gate":"Signed delivery record and final payment made."},
+ {"t":"Measure","obj":"Compare the result against the baseline.","act":["Measure times and errors with the new process","Compare against stage 1","Propose the next improvement"],"in":["Baseline","Weeks of operation with the solution"],"out":["Measured before-and-after result","KPI for follow-up"],"ok":["The result uses the same unit as the baseline","If it didn't improve, it is stated and explained"],"gate":"Project closure or move to support (S5)."}],
+"mL":{"stage":"Stage","obj":"Objective","act":"Activities","in":"Inputs","out":"Deliverables","ok":"Acceptance criteria","gate":"To move on","prev":"← Previous stage","next":"Next stage →"},
+"calc":{"empty":"Enter a number.","range":"Outside the allowed range.","integer":"Use a whole number.","stale":"Fix the marked fields to update the results.","h":"h","days":"days","months":"months","years":"years","year":"year","none":"Does not pay back","noInv":"No investment","beyond":"(beyond the horizon)","na":"N/A","cons":"Conservative","mid":"Middle","opt":"Optimistic","cur":"Current","aut":"Automated","month":"Month","horizon":"horizon",
+ "calCap":"Each square is a working day. Orange: days spent on the task; green: days that would be freed in the middle scenario.",
+ "calFull":"The task takes more than every working day of the year: more than one full-time person.",
+ "descAnnual":"Current annual cost {a}; with the automated process {b}, of which {c} is recurring cost.",
+ "descCum":"Cumulative net benefit at {n} months: conservative {c}, middle {m}, optimistic {o}. Starts at minus the investment of {i}.",
+ "wa":"Hi, I used the PAGI calculator: a process of {h} h per week with {p} person(s) costs us about {c} per year. I'd like to measure it.",
+ "sum":"Calculator: {h} h/week, {p} person(s), current cost {c} per year; middle scenario: net benefit {n} over {y} year(s), payback {r}."},
+"etl":{"rules":[ ["R1","Spaces"],["R2","Required"],["R3","Dates"],["R4","Amounts"],["R5","Branches"],["R6","Duplicates"]],
+ "ruleTip":{"R1":"Trim and collapse spaces","R2":"id, client, date and amount not empty","R3":"To YYYY-MM-DD","R4":"To a 2-decimal number","R5":"Against branch catalog","R6":"By id, after normalizing"},
+ "cols":["#","id","client","date","amount","branch"],"status":"status","detail":"detail",
+ "st":{"valido":"✓ valid","corregido":"↻ fixed","revision":"⚠ review","rechazado":"✕ rejected","duplicado":"⧉ duplicate"},
+ "sum":{"entrada":"Input records","valido":"Valid, unchanged","corregido":"Auto-fixed","revision":"For human review","rechazado":"Rejected","duplicado":"Duplicates removed"},
+ "codes":{"campo_vacio":"Required field empty: {f}","fecha_ambigua":"Two-digit year: the century can't be known for sure","fecha_ilegible":"Unrecognized date format","fecha_inexistente":"The date does not exist","monto_ambiguo":"Ambiguous separators: 2,300.00 or 2.30?","monto_ilegible":"The amount is not a number","sucursal_vacia":"Empty branch","sucursal_fuera_catalogo":"Branch not in catalog: confirm whether it is new","duplicado_exacto":"Identical to row {r}: the repeat is removed","id_en_conflicto":"Same id with different data: decide which is correct"},
+ "change":"{rule}: {f} “{a}” → “{b}”","noIssues":"No issues.",
+ "running":"Running {r}…","done":"Done: 6 rules applied","orig":"Original data",
+ "consTitle":"Total by branch (valid and fixed only)","consNote":"Rows under review stay out of the report until someone approves them.",
+ "orders":"orders","quality":"Data quality","show":"Show","hide":"Hide","legendBefore":"Highlighted cells: extra spaces (blue) and non-standard formats (red).","legendAfter":"Green: auto-fixed · Amber: needs review · Red: reason for rejection."},
+"form":{"nombre":"Enter your name (at least 2 letters).","msg":"Describe the process in at least 10 characters.","fix":"Check the marked fields.","opened":"Message ready. We tried to open WhatsApp in another tab; if it did not open, use the link. Nothing reaches us until you send it from WhatsApp.","blocked":"Your browser didn't open the tab.","openLink":"Open WhatsApp with the message","hi":"Hi, I'm","from":"from","topic":"I'm interested in","process":"Process to improve","quizOn":"Include my self-check result"}
+}</script>
 <footer class="foot">
   <div class="wrap">
     <span>© 2026 PAGI · Trade name operated by Luis Manuel Macías Patiño</span>
@@ -513,6 +528,8 @@
     </nav>
   </div>
 </footer>
-<script src="/pagi/site.js?v=1" defer></script>
+<script src="/pagi/site.js?v=2" defer></script>
+<script src="/pagi/logic.js?v=2" defer></script>
+<script src="/pagi/app.js?v=2" defer></script>
 </body>
 </html>
