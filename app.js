@@ -620,9 +620,10 @@
       var m = M[i];
       panel.setAttribute('aria-labelledby', 'mt-' + i);
       panel.innerHTML = '<div class="full"><span class="label">' + esc(ML.stage) + ' ' + (i + 1) + ' / ' + M.length + '</span><h3>' + esc(m.t) + '</h3><p class="lead" style="font-size:1.05rem"><b>' + esc(ML.obj) + ':</b> ' + esc(m.obj) + '</p></div>' +
-        '<div><h4>' + esc(ML.act) + '</h4>' + list(m.act) + '</div><div><h4>' + esc(ML.in) + '</h4>' + list(m.in) + '</div><div><h4>' + esc(ML.out) + '</h4>' + list(m.out) + '</div>' +
-        '<div class="full"><h4>' + esc(ML.ok) + '</h4>' + list(m.ok) + '</div>' +
+        // Lo esencial a la vista (entregables y condición para avanzar); el detalle, plegado.
+        '<div class="full"><h4>' + esc(ML.out) + '</h4>' + list(m.out) + '</div>' +
         '<p class="gate"><b>' + esc(ML.gate) + ':</b> <span>' + esc(m.gate) + '</span></p>' +
+        '<details class="fold mdet full"><summary>' + esc(ML.more) + '</summary><div class="fold-body mgrid"><div><h4>' + esc(ML.act) + '</h4>' + list(m.act) + '</div><div><h4>' + esc(ML.in) + '</h4>' + list(m.in) + '</div><div><h4>' + esc(ML.ok) + '</h4>' + list(m.ok) + '</div></div></details>' +
         '<div class="pnav"><button type="button" class="btn ghost small" data-d="-1"' + (i === 0 ? ' disabled' : '') + '>' + esc(ML.prev) + '</button><button type="button" class="btn blue small" data-d="1"' + (i === M.length - 1 ? ' disabled' : '') + '>' + esc(ML.next) + '</button></div>';
       panel.querySelectorAll('[data-d]').forEach(function (b) { b.addEventListener('click', function () { show(cur + +b.dataset.d); }); });
       bump(panel);
@@ -652,6 +653,11 @@
       st.innerHTML = esc(F.opened) + ' <a href="' + url + '" target="_blank" rel="noopener">' + esc(F.openLink) + '</a>';
     });
   })();
+
+  /* Un enlace a una demostración plegada (#datos, #ia) la abre */
+  function openTarget() { var t = location.hash.length > 1 && document.getElementById(location.hash.slice(1)); var d = t && t.closest('details'); if (d && !d.open) { d.open = true; t.scrollIntoView(); } }
+  window.addEventListener('hashchange', openTarget);
+  openTarget();
 
   quiz.init(); calc.init();
   document.dispatchEvent(new CustomEvent('pagi:ready'));

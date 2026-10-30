@@ -482,6 +482,22 @@ footer.foot a{color:inherit;display:inline-block;padding:10px 0}
 .legal .meta{font:500 .85rem/1.5 var(--mono);color:var(--muted)}
 .legal .box{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px 18px}
 
+/* Bloques plegables: el detalle queda disponible sin saturar la vista principal */
+.fold{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--surface)}
+.fold>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 16px;min-height:48px;font-weight:600}
+.fold>summary::-webkit-details-marker{display:none}
+.fold>summary::after{content:"";flex:none;width:8px;height:8px;margin-right:4px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);transition:transform var(--fast) ease}
+.fold[open]>summary::after{transform:rotate(-135deg)}
+.fold>summary small{display:block;margin-top:4px;font-weight:400;font-size:.92rem;color:var(--muted)}
+.fold-body{padding:0 16px 16px;display:grid;gap:16px;min-width:0}
+.demos{display:grid;gap:14px}
+.demo>summary{padding:18px 20px;font-size:1.1rem}
+.demo>.fold-body{padding:0 20px 20px}
+.calc .adv{background:transparent}
+.mdet{background:transparent}
+.mgrid{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:820px){.mgrid{grid-template-columns:1fr}}
+
 /* Laboratorio neuronal */
 .nn-grid{grid-template-columns:minmax(260px,300px) minmax(0,1fr);grid-template-areas:"ctrl fig" "ctrl side";align-items:start;gap:20px 28px}
 .nn-controls{grid-area:ctrl}.nn-figure{grid-area:fig}.nn-side{grid-area:side}
