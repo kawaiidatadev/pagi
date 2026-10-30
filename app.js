@@ -7,7 +7,6 @@
   var LANG = document.documentElement.lang === 'es' ? 'es-MX' : 'en-US';
   var WA = 'https://wa.me/523324393525?text=';
   var money = new Intl.NumberFormat(LANG, { style: 'currency', currency: 'MXN', currencyDisplay: 'narrowSymbol', maximumFractionDigits: 0 });
-  var money2 = new Intl.NumberFormat(LANG, { style: 'currency', currency: 'MXN', currencyDisplay: 'narrowSymbol', minimumFractionDigits: 2, maximumFractionDigits: 2 });
   var num = new Intl.NumberFormat(LANG, { maximumFractionDigits: 0 });
   var num1 = new Intl.NumberFormat(LANG, { maximumFractionDigits: 1 });
   function still() { return window.pagiMotionOff ? window.pagiMotionOff() : false; }
@@ -42,67 +41,7 @@
     else { var h0 = el.scrollHeight; var a = el.animate([{ height: h0 + 'px', opacity: 1 }, { height: '0px', opacity: 0 }], { duration: 220, easing: 'ease-in' }); a.onfinish = function () { el.hidden = true; }; }
   }
 
-  /* ---------- 1. Fondo de nodos del encabezado principal (estático: se redibuja sólo al cambiar tamaño o tema) ---------- */
-  (function net() {
-    var cv = $('net'); if (!cv || !cv.getContext) return;
-    var ctx = cv.getContext('2d'), nodes = [], W = 0, H = 0, color = '37,99,235';
-    function readColor() { var c = getComputedStyle(document.documentElement).getPropertyValue('--blue').trim(); var m = c.match(/^#([0-9a-f]{6})$/i); if (m) { var n = parseInt(m[1], 16); color = [(n >> 16) & 255, (n >> 8) & 255, n & 255].join(','); } }
-    function size() {
-      var r = cv.getBoundingClientRect(), dpr = Math.min(2, window.devicePixelRatio || 1);
-      W = r.width; H = r.height; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      var n = Math.min(38, Math.round(W * H / 26000)); nodes = [];
-      var seed = 7; function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
-      for (var i = 0; i < n; i++) nodes.push({ x: rnd() * W, y: rnd() * H });
-      draw();
-    }
-    function draw() {
-      ctx.clearRect(0, 0, W, H);
-      for (var i = 0; i < nodes.length; i++) {
-        var a = nodes[i];
-        for (var j = i + 1; j < nodes.length; j++) {
-          var b = nodes[j], dx = a.x - b.x, dy = a.y - b.y, d = Math.sqrt(dx * dx + dy * dy);
-          if (d < 150) { ctx.strokeStyle = 'rgba(' + color + ',' + (0.16 * (1 - d / 150)) + ')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
-        }
-        ctx.fillStyle = 'rgba(' + color + ',.28)'; ctx.beginPath(); ctx.arc(a.x, a.y, 2.2, 0, Math.PI * 2); ctx.fill();
-      }
-    }
-    readColor(); size();
-    window.addEventListener('resize', function () { clearTimeout(cv._r); cv._r = setTimeout(size, 150); });
-    new MutationObserver(function () { readColor(); draw(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
-    if (window.matchMedia) matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () { readColor(); draw(); });
-  })();
-
-  /* ---------- 2. Comparador manual / automatizado ---------- */
-  (function ficha() {
-    var box = $('ficha'), flow = $('flow'), kpis = $('kpis');
-    T.stages.forEach(function (s, i) {
-      var li = h('li', { class: 'stage', style: '--i:' + i });
-      li.innerHTML = '<span class="n">0' + (i + 1) + '</span><b>' + esc(s.t) + '</b><span class="how"></span><span class="chip"></span><span class="pk" aria-hidden="true"></span>';
-      flow.appendChild(li);
-    });
-    function paint(mode, animate) {
-      box.dataset.mode = mode; S.mode = mode; save();
-      box.querySelectorAll('.seg button').forEach(function (b) { b.setAttribute('aria-pressed', b.dataset.mode === mode ? 'true' : 'false'); });
-      [].forEach.call(flow.children, function (li, i) {
-        var s = T.stages[i];
-        li.querySelector('.how').textContent = mode === 'auto' ? s.a : s.m;
-        var c = li.querySelector('.chip'); c.className = 'chip ' + mode; c.textContent = mode === 'auto' ? T.chipA : T.chipM;
-        if (animate) { li.classList.add('changed'); setTimeout(function () { li.classList.remove('changed'); }, 300 + i * 70); }
-      });
-      var k = mode === 'auto' ? T.kpiA : T.kpiM;
-      kpis.innerHTML = k.map(function (x) { return '<div><strong>' + esc(x[0]) + '</strong><small>' + esc(x[1]) + '</small></div>'; }).join('');
-      if (animate) [].forEach.call(kpis.children, function (d) { bump(d); });
-      if (animate) $('mode-say').textContent = T.modeSay[mode];
-    }
-    // Los paquetes recorren el flujo unos ciclos (CSS) al entrar en pantalla y al cambiar de modo; luego se detienen.
-    function flowOnce() { flow.classList.remove('flowing'); void flow.offsetWidth; flow.classList.add('flowing'); }
-    box.querySelectorAll('.seg button').forEach(function (b) { b.addEventListener('click', function () { paint(b.dataset.mode, true); flowOnce(); }); });
-    paint(S.mode === 'auto' ? 'auto' : 'manual', false);
-    if ('IntersectionObserver' in window) { var fo = new IntersectionObserver(function (es) { if (es[0].isIntersecting) { flowOnce(); fo.disconnect(); } }, { threshold: 0.4 }); fo.observe(flow); }
-    else flowOnce();
-  })();
-
-  /* ---------- 3. Autodiagnóstico ---------- */
+  /* ---------- 1. Autodiagnóstico ---------- */
   var quiz = (function () {
     var form = $('quiz'), steps = $('qsteps'), dots = $('qdots'), Q = T.q, n = Q.length;
     var st = S.quiz || { answers: {}, step: 0 }; S.quiz = st;
@@ -173,7 +112,7 @@
     return { init: function () { paint(false); result(); }, summary: summary };
   })();
 
-  /* ---------- 4. Servicios ---------- */
+  /* ---------- 2. Servicios ---------- */
   (function services() {
     var box = $('svcs'), L2 = T.svcL;
     T.services.forEach(function (s) {
@@ -194,7 +133,7 @@
     });
   })();
 
-  /* ---------- 5. Calculadora ---------- */
+  /* ---------- 3. Calculadora ---------- */
   var calc = (function () {
     var KEYS = ['horas', 'personas', 'costoHora', 'semanas', 'inversion', 'recurrente', 'anios'];
     var DEF = { horas: '5', personas: '1', costoHora: '120', semanas: '48', reduccion: '60', inversion: '25000', recurrente: '0', anios: '3' };
@@ -304,99 +243,7 @@
     };
   })();
 
-  /* ---------- 6. Simulador ETL ---------- */
-  (function etl() {
-    var E = T.etl, res = L.runETL(), es = S.etl || { ran: false, tab: 'before' }; S.etl = es;
-    var rules = $('rules'), table = $('etl-table'), run = $('etl-run'), reset = $('etl-reset');
-    E.rules.forEach(function (r) { rules.appendChild(h('li', { 'data-r': r[0] }, '<b>' + r[0] + ' · ' + esc(r[1]) + '</b><span>' + esc(E.ruleTip[r[0]]) + '</span>')); });
-    var F = ['id', 'cliente', 'fecha', 'monto', 'sucursal'];
-    function show(v) { return v === '' ? '<span class="muted">∅</span>' : esc(v).replace(/^ +| +$/g, function (m) { return '<span class="ws">' + m.replace(/ /g, '␣') + '</span>'; }).replace(/ {2,}/g, function (m) { return '<span class="ws">' + m.replace(/ /g, '␣') + '</span>'; }); }
-    function before() {
-      var html = '<p class="label" style="margin-bottom:8px">' + esc(E.legendBefore) + '</p><div class="table-wrap" tabindex="0" role="region" aria-label="' + esc(E.cols.slice(1).join(', ')) + '"><table><thead><tr>' + E.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '</tr></thead><tbody>';
-      res.rows.forEach(function (r) {
-        html += '<tr><td class="num">' + r.row + '</td>' + F.map(function (f) {
-          var touched = r.changes.some(function (c) { return c.field === f && c.rule !== 'R1'; }) || r.issues.some(function (i) { return i.field === f && i.level !== 'duplicate'; });
-          return '<td' + (touched ? ' class="bad"' : '') + '>' + show(r.original[f]) + '</td>';
-        }).join('') + '</tr>';
-      });
-      table.innerHTML = html + '</tbody></table></div>';
-    }
-    function reason(i) { return fill(E.codes[i.code], { f: i.field, r: (res.rows.filter(function (x) { return x.issues.indexOf(i) >= 0; })[0] || {}).duplicateOf }); }
-    function after() {
-      var html = '<p class="label" style="margin-bottom:8px">' + esc(E.legendAfter) + '</p><div class="table-wrap" tabindex="0" role="region" aria-label="' + esc(E.cols.slice(1).join(', ')) + '"><table><thead><tr>' + E.cols.map(function (c) { return '<th>' + esc(c) + '</th>'; }).join('') + '<th>' + esc(E.status) + '</th><th><span class="sr-only">' + esc(E.detail) + '</span></th></tr></thead><tbody>';
-      res.rows.forEach(function (r) {
-        html += '<tr><td class="num">' + r.row + '</td>' + F.map(function (f) {
-          var iss = r.issues.filter(function (i) { return i.field === f && i.level !== 'duplicate'; })[0];
-          var cls = iss ? (iss.level === 'reject' ? 'bad' : 'warn') : r.changes.some(function (c) { return c.field === f; }) ? 'fixed' : '';
-          return '<td' + (cls ? ' class="' + cls + '"' : '') + '>' + show(r.clean[f]) + '</td>';
-        }).join('') + '<td><span class="st ' + r.status + '">' + esc(E.st[r.status]) + '</span></td>' +
-          '<td><button type="button" class="rowbtn" aria-expanded="false" aria-controls="d-' + r.row + '">' + esc(E.show) + '</button></td></tr>' +
-          '<tr class="detail" id="d-' + r.row + '" hidden><td colspan="8"><ul>' +
-          (r.changes.length || r.issues.length ? r.changes.map(function (c) { return '<li>' + esc(fill(E.change, { rule: c.rule, f: c.field, a: c.from, b: c.to })) + '</li>'; }).join('') +
-            r.issues.map(function (i) { return '<li>' + i.rule + ': ' + esc(reason(i)) + '</li>'; }).join('') : '<li>' + esc(E.noIssues) + '</li>') + '</ul></td></tr>';
-      });
-      table.innerHTML = html + '</tbody></table></div>';
-      table.querySelectorAll('.rowbtn').forEach(function (b) {
-        b.addEventListener('click', function () { var d = $(b.getAttribute('aria-controls')), open = d.hidden; d.hidden = !open; b.setAttribute('aria-expanded', open); b.textContent = open ? E.hide : E.show; });
-      });
-    }
-    function cons() {
-      var max = Math.max.apply(null, res.consolidated.map(function (c) { return c.total; }));
-      table.innerHTML = '<div class="etl-out"><div style="display:grid;gap:12px"><h3 style="font-size:1rem">' + esc(E.consTitle) + '</h3><div class="bars" role="img" aria-label="' + esc(res.consolidated.map(function (c) { return c.sucursal + ' ' + money2.format(c.total); }).join(', ')) + '">' +
-        res.consolidated.map(function (c) { return '<div class="b"><span>' + esc(c.sucursal) + '</span><span class="track"><span class="fill" data-w="' + (c.total / max * 100) + '"></span></span><span class="num">' + money2.format(c.total) + '</span></div>'; }).join('') + '</div>' +
-        '<div class="table-wrap" tabindex="0" role="region" aria-label="' + esc(E.cols.slice(1).join(', ')) + '"><table><thead><tr><th>' + esc(E.cols[5]) + '</th><th class="n">' + esc(E.orders) + '</th><th class="n">total</th></tr></thead><tbody>' +
-        res.consolidated.map(function (c) { return '<tr><td>' + esc(c.sucursal) + '</td><td class="n">' + c.pedidos + '</td><td class="n">' + money2.format(c.total) + '</td></tr>'; }).join('') + '</tbody></table></div><p class="muted" style="font-size:.85rem;color:var(--c-muted)">' + esc(E.consNote) + '</p></div>' +
-        '<pre><code><span class="kw">SELECT</span> sucursal, <span class="kw">COUNT</span>(*) <span class="kw">AS</span> pedidos, <span class="kw">SUM</span>(monto) <span class="kw">AS</span> total\n<span class="kw">FROM</span> pedidos_limpios\n<span class="kw">WHERE</span> estado <span class="kw">IN</span> (\'valido\', \'corregido\')\n<span class="kw">GROUP BY</span> sucursal\n<span class="kw">ORDER BY</span> total <span class="kw">DESC</span>;</code></pre></div>';
-      requestAnimationFrame(function () { table.querySelectorAll('.fill').forEach(function (f) { f.style.width = f.dataset.w + '%'; }); });
-    }
-    var tabs = { before: $('tab-before'), after: $('tab-after'), cons: $('tab-cons') }, views = { before: before, after: after, cons: cons };
-    function tab(name, focus) {
-      es.tab = name; save();
-      Object.keys(tabs).forEach(function (k) { tabs[k].setAttribute('aria-selected', k === name); tabs[k].tabIndex = k === name ? 0 : -1; });
-      table.setAttribute('aria-labelledby', tabs[name].id); views[name](); bump(table); if (focus) tabs[name].focus();
-    }
-    Object.keys(tabs).forEach(function (k, i, arr) {
-      tabs[k].addEventListener('click', function () { tab(k); });
-      tabs[k].addEventListener('keydown', function (e) {
-        var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (!d) return;
-        var on = arr.filter(function (x) { return !tabs[x].disabled; }), j = (on.indexOf(k) + d + on.length) % on.length; e.preventDefault(); tab(on[j], true);
-      });
-    });
-    function summary() {
-      var s = res.summary, box = $('etl-sum');
-      box.innerHTML = Object.keys(E.sum).map(function (k) { return '<div><strong class="num" data-n="' + s[k] + '">0</strong><small>' + esc(E.sum[k]) + '</small></div>'; }).join('');
-      box.hidden = false; box.querySelectorAll('[data-n]').forEach(function (el) { el.dataset.val = 0; tween(el, +el.dataset.n, function (x) { return String(Math.round(x)); }); });
-      var q = $('etl-qbar'), col = { valido: 'var(--c-green)', corregido: 'var(--c-cyan)', revision: 'var(--c-orange)', rechazado: 'var(--c-red)', duplicado: 'var(--c-muted)' };
-      q.innerHTML = Object.keys(col).map(function (k) { return '<span style="width:' + (s[k] / s.entrada * 100) + '%;background:' + col[k] + '" title="' + esc(E.st[k]) + ': ' + s[k] + '"></span>'; }).join('');
-      q.setAttribute('aria-label', E.quality + ': ' + Object.keys(col).map(function (k) { return E.st[k] + ' ' + s[k]; }).join(', '));
-      q.hidden = false;
-    }
-    function finish() {
-      es.ran = true; save();
-      rules.querySelectorAll('li').forEach(function (li) { li.classList.remove('run'); li.classList.add('done'); });
-      $('etl-state').textContent = E.done; tabs.after.disabled = false; tabs.cons.disabled = false; reset.disabled = false; run.disabled = true;
-      summary(); tab(es.tab === 'before' ? 'after' : es.tab);
-    }
-    run.addEventListener('click', function () {
-      run.disabled = true; es.tab = 'after';
-      if (still()) { finish(); return; }
-      var lis = rules.querySelectorAll('li'), i = 0;
-      (function next() {
-        if (i > 0) { lis[i - 1].classList.remove('run'); lis[i - 1].classList.add('done'); }
-        if (i === lis.length) { finish(); return; }
-        lis[i].classList.add('run'); $('etl-state').textContent = fill(E.running, { r: lis[i].dataset.r }); i++; setTimeout(next, 260);
-      })();
-    });
-    reset.addEventListener('click', function () {
-      es.ran = false; es.tab = 'before'; save();
-      rules.querySelectorAll('li').forEach(function (li) { li.className = ''; });
-      $('etl-sum').hidden = true; $('etl-qbar').hidden = true; tabs.after.disabled = true; tabs.cons.disabled = true; reset.disabled = true; run.disabled = false;
-      $('etl-state').textContent = E.orig; tab('before'); run.focus();
-    });
-    if (es.ran) finish(); else tab('before');
-  })();
-
-  /* ---------- 7. Laboratorio neuronal (simulación con pesos definidos a mano; cálculo en logic.js) ---------- */
+  /* ---------- 4. Laboratorio neuronal (simulación con pesos definidos a mano; cálculo en logic.js) ---------- */
   (function neural() {
     var box = $('nn'); if (!box) return;
     var N = T.nn, M = L.NN, svg = $('nn-svg'), NS = 'http://www.w3.org/2000/svg', DUR = 900;
@@ -603,35 +450,7 @@
     sync(); build(); paint(1, 1); side(); controls(); say(N.ready);
   })();
 
-  /* ---------- 8. Metodología ---------- */
-  (function method() {
-    var box = $('steps'), panel = $('mpanel'), M = T.method, ML = T.mL, cur = S.method || 0, btns = [];
-    M.forEach(function (m, i) {
-      var b = h('button', { role: 'tab', id: 'mt-' + i, 'aria-controls': 'mpanel', type: 'button' }, '<span class="dot">0' + (i + 1) + '</span><span class="t">' + esc(m.t) + '</span>');
-      b.addEventListener('click', function () { show(i); });
-      b.addEventListener('keydown', function (e) { var d = e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : e.key === 'ArrowLeft' || e.key === 'ArrowUp' ? -1 : 0; if (d) { e.preventDefault(); show((cur + d + M.length) % M.length); btns[cur].focus(); } });
-      box.appendChild(b); btns.push(b);
-    });
-    function list(a) { return '<ul>' + a.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join('') + '</ul>'; }
-    function show(i) {
-      cur = i; S.method = i; save();
-      btns.forEach(function (b, k) { b.setAttribute('aria-selected', k === i); b.tabIndex = k === i ? 0 : -1; b.classList.toggle('past', k < i); });
-      $('rail').style.width = (i / (M.length - 1) * 80) + '%';
-      var m = M[i];
-      panel.setAttribute('aria-labelledby', 'mt-' + i);
-      panel.innerHTML = '<div class="full"><span class="label">' + esc(ML.stage) + ' ' + (i + 1) + ' / ' + M.length + '</span><h3>' + esc(m.t) + '</h3><p class="lead" style="font-size:1.05rem"><b>' + esc(ML.obj) + ':</b> ' + esc(m.obj) + '</p></div>' +
-        // Lo esencial a la vista (entregables y condición para avanzar); el detalle, plegado.
-        '<div class="full"><h4>' + esc(ML.out) + '</h4>' + list(m.out) + '</div>' +
-        '<p class="gate"><b>' + esc(ML.gate) + ':</b> <span>' + esc(m.gate) + '</span></p>' +
-        '<details class="fold mdet full"><summary>' + esc(ML.more) + '</summary><div class="fold-body mgrid"><div><h4>' + esc(ML.act) + '</h4>' + list(m.act) + '</div><div><h4>' + esc(ML.in) + '</h4>' + list(m.in) + '</div><div><h4>' + esc(ML.ok) + '</h4>' + list(m.ok) + '</div></div></details>' +
-        '<div class="pnav"><button type="button" class="btn ghost small" data-d="-1"' + (i === 0 ? ' disabled' : '') + '>' + esc(ML.prev) + '</button><button type="button" class="btn blue small" data-d="1"' + (i === M.length - 1 ? ' disabled' : '') + '>' + esc(ML.next) + '</button></div>';
-      panel.querySelectorAll('[data-d]').forEach(function (b) { b.addEventListener('click', function () { show(cur + +b.dataset.d); }); });
-      bump(panel);
-    }
-    show(Math.min(cur, M.length - 1));
-  })();
-
-  /* ---------- 9. Formulario de contacto (arma un mensaje de WhatsApp) ---------- */
+  /* ---------- 5. Formulario de contacto (arma un mensaje de WhatsApp) ---------- */
   (function contact() {
     var f = $('cform'), F = T.form, msg = $('f-msg');
     msg.addEventListener('input', function () { $('f-count').textContent = msg.value.length + '/600'; });

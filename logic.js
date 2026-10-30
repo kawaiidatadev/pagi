@@ -99,121 +99,7 @@
     };
   }
 
-  /* ---------- 3. Simulador ETL ----------
-     Reglas en orden:
-     R1 espacios: recorta y colapsa espacios (corrección segura).
-     R2 obligatorios: id, cliente, fecha y monto no vacíos; si falta uno → rechazado.
-     R3 fecha a AAAA-MM-DD. Acepta AAAA-MM-DD, DD/MM/AAAA (convención de la fuente: México) y D-mmm-AAAA.
-        Año de dos dígitos → revisión (ambigua). Fecha inexistente o ilegible → rechazado.
-     R4 monto a número con 2 decimales. Quita $ y comas de miles. "2.300,00" → revisión (separador ambiguo).
-        Otro texto → rechazado.
-     R5 sucursal contra catálogo (gdl/guadalajara, zap/zapopan, tlaq/tlaquepaque). Fuera de catálogo → revisión.
-     R6 duplicados por id: registro idéntico ya normalizado → se elimina el repetido (seguro);
-        mismo id con datos distintos → todos a revisión.
-     Estado final: rechazado > duplicado > revisión > corregido > válido. */
-  var SAMPLE = [
-    ['P-1001', 'Ferretería del Valle', '2026-03-02', '1250.00', 'Guadalajara'],
-    ['P-1002', '  Taller Ruiz  ', '05/03/2026', '$3,480.50', 'gdl'],
-    ['P-1003', 'Plásticos Zapata', '7-mar-2026', '980', 'Zapopan'],
-    ['P-1004', 'Grupo  Morales', '', '2100', 'Tlaquepaque'],
-    ['P-1002', 'Taller Ruiz', '2026-03-05', '3480.50', 'Guadalajara'],
-    ['P-1005', 'Distribuidora Luna', '03/04/26', '1,150.00', 'ZAP'],
-    ['P-1006', 'Comercial Ortega', '2026-03-09', '', 'Guadalajara'],
-    ['P-1007', 'Refacciones Peña', '2026-03-10', '2.300,00', 'Guadalajara'],
-    ['P-1008', 'Maquinados Ríos', '2026-03-11', '4520', 'Tonalá'],
-    ['P-1003', 'Plásticos Zapata', '2026-03-08', '990', 'Zapopan'],
-    ['P-1009', 'Empaques Sol', '2026-03-12', '760.00', 'tlaq '],
-    ['P-1010', 'Ferretería del Valle', '31/02/2026', '640', 'Guadalajara'],
-    ['P-1011', 'Taller Ruiz', '2026-03-13', '1890.00', 'Guadalajara'],
-    ['P-1012', 'Grupo Morales', '2026-03-14', '2675.25', 'Tlaquepaque']
-  ].map(function (r, i) { return { row: i + 1, id: r[0], cliente: r[1], fecha: r[2], monto: r[3], sucursal: r[4] }; });
-
-  var FIELDS = ['id', 'cliente', 'fecha', 'monto', 'sucursal'];
-  var MONTHS = { ene: 1, feb: 2, mar: 3, abr: 4, may: 5, jun: 6, jul: 7, ago: 8, sep: 9, oct: 10, nov: 11, dic: 12 };
-  var CATALOG = { gdl: 'Guadalajara', guadalajara: 'Guadalajara', zap: 'Zapopan', zapopan: 'Zapopan', tlaq: 'Tlaquepaque', tlaquepaque: 'Tlaquepaque' };
-  function pad(n) { return (n < 10 ? '0' : '') + n; }
-  function realDate(y, m, d) { var t = new Date(Date.UTC(y, m - 1, d)); return t.getUTCFullYear() === y && t.getUTCMonth() === m - 1 && t.getUTCDate() === d; }
-  function fold(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
-
-  function parseDate(s) {
-    var m, y, mo, d;
-    if ((m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/))) { y = +m[1]; mo = +m[2]; d = +m[3]; }
-    else if ((m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/))) { d = +m[1]; mo = +m[2]; y = +m[3]; }
-    else if ((m = s.match(/^(\d{1,2})-([a-záéíóú]{3})-(\d{4})$/i)) && MONTHS[fold(m[2])]) { d = +m[1]; mo = MONTHS[fold(m[2])]; y = +m[3]; }
-    else if (/^\d{1,2}\/\d{1,2}\/\d{2}$/.test(s)) return { review: 'fecha_ambigua' };
-    else return { reject: 'fecha_ilegible' };
-    if (!realDate(y, mo, d)) return { reject: 'fecha_inexistente' };
-    return { value: y + '-' + pad(mo) + '-' + pad(d) };
-  }
-
-  function parseAmount(s) {
-    var t = s.replace(/\$/g, '').replace(/\s/g, '');
-    if (/^\d{1,3}(,\d{3})+(\.\d+)?$/.test(t) || /^\d+(\.\d+)?$/.test(t)) return { value: parseFloat(t.replace(/,/g, '')).toFixed(2) };
-    if (/^\d{1,3}(\.\d{3})+,\d{1,2}$/.test(t)) return { review: 'monto_ambiguo' };
-    return { reject: 'monto_ilegible' };
-  }
-
-  function runETL(rows) {
-    rows = rows || SAMPLE;
-    var out = rows.map(function (src) {
-      var r = { row: src.row, original: {}, clean: {}, changes: [], issues: [], status: null };
-      FIELDS.forEach(function (f) { r.original[f] = src[f]; });
-      // R1
-      FIELDS.forEach(function (f) {
-        var v = String(src[f] == null ? '' : src[f]), t = v.replace(/\s+/g, ' ').trim();
-        if (t !== v) r.changes.push({ field: f, from: v, to: t, rule: 'R1' });
-        r.clean[f] = t;
-      });
-      // R2
-      ['id', 'cliente', 'fecha', 'monto'].forEach(function (f) { if (!r.clean[f]) r.issues.push({ field: f, code: 'campo_vacio', level: 'reject', rule: 'R2' }); });
-      // R3
-      if (r.clean.fecha) {
-        var d = parseDate(r.clean.fecha);
-        if (d.value) { if (d.value !== r.clean.fecha) { r.changes.push({ field: 'fecha', from: r.clean.fecha, to: d.value, rule: 'R3' }); r.clean.fecha = d.value; } }
-        else r.issues.push({ field: 'fecha', code: d.review || d.reject, level: d.review ? 'review' : 'reject', rule: 'R3' });
-      }
-      // R4
-      if (r.clean.monto) {
-        var a = parseAmount(r.clean.monto);
-        if (a.value) { if (a.value !== r.clean.monto) { r.changes.push({ field: 'monto', from: r.clean.monto, to: a.value, rule: 'R4' }); r.clean.monto = a.value; } }
-        else r.issues.push({ field: 'monto', code: a.review || a.reject, level: a.review ? 'review' : 'reject', rule: 'R4' });
-      }
-      // R5
-      var key = fold(r.clean.sucursal);
-      if (!key) r.issues.push({ field: 'sucursal', code: 'sucursal_vacia', level: 'review', rule: 'R5' });
-      else if (CATALOG[key]) { if (CATALOG[key] !== r.clean.sucursal) { r.changes.push({ field: 'sucursal', from: r.clean.sucursal, to: CATALOG[key], rule: 'R5' }); r.clean.sucursal = CATALOG[key]; } }
-      else r.issues.push({ field: 'sucursal', code: 'sucursal_fuera_catalogo', level: 'review', rule: 'R5' });
-      return r;
-    });
-    // R6
-    var byId = {};
-    out.forEach(function (r) { if (!r.issues.some(function (i) { return i.level === 'reject'; }) && r.clean.id) (byId[r.clean.id] = byId[r.clean.id] || []).push(r); });
-    Object.keys(byId).forEach(function (id) {
-      var g = byId[id]; if (g.length < 2) return;
-      var sig = function (r) { return FIELDS.map(function (f) { return r.clean[f]; }).join('|'); };
-      var first = g[0], allSame = g.every(function (r) { return sig(r) === sig(first); });
-      if (allSame) g.slice(1).forEach(function (r) { r.duplicateOf = first.row; r.issues.push({ field: 'id', code: 'duplicado_exacto', level: 'duplicate', rule: 'R6' }); });
-      else g.forEach(function (r) { r.issues.push({ field: 'id', code: 'id_en_conflicto', level: 'review', rule: 'R6' }); });
-    });
-    out.forEach(function (r) {
-      var lv = r.issues.map(function (i) { return i.level; });
-      r.status = lv.indexOf('reject') >= 0 ? 'rechazado' : lv.indexOf('duplicate') >= 0 ? 'duplicado'
-        : lv.indexOf('review') >= 0 ? 'revision' : r.changes.length ? 'corregido' : 'valido';
-    });
-    var summary = { entrada: out.length, valido: 0, corregido: 0, revision: 0, rechazado: 0, duplicado: 0 };
-    out.forEach(function (r) { summary[r.status]++; });
-    var groups = {};
-    out.forEach(function (r) {
-      if (r.status !== 'valido' && r.status !== 'corregido') return;
-      var g = groups[r.clean.sucursal] = groups[r.clean.sucursal] || { sucursal: r.clean.sucursal, pedidos: 0, total: 0 };
-      g.pedidos++; g.total = round2(g.total + parseFloat(r.clean.monto));
-    });
-    var consolidated = Object.keys(groups).map(function (k) { return groups[k]; }).sort(function (a, b) { return b.total - a.total; });
-    return { rows: out, summary: summary, consolidated: consolidated };
-  }
-
-
-  /* ---------- 4. Laboratorio neuronal (simulación) ----------
+  /* ---------- 3. Laboratorio neuronal (simulación) ----------
      Red feedforward 4 → 4 → 3 con pesos DEFINIDOS A MANO para ilustrar; no está entrenada con datos reales.
      Entradas normalizadas a 0–1 con min–max. Capa oculta: ReLU(W1·x + b1). Salida: softmax(W2·h + b2).
      Cada neurona oculta tiene un significado porque sus pesos se eligieron a mano; en una red entrenada no siempre es así. */
@@ -255,7 +141,7 @@
 
   root.PAGILogic = {
     LIMITS: LIMITS, SCENARIOS: SCENARIOS, validateInputs: validateInputs, roi: roi, scenarios: scenarios,
-    QUIZ: QUIZ, evaluateQuiz: evaluateQuiz, SAMPLE: SAMPLE, runETL: runETL, parseDate: parseDate, parseAmount: parseAmount,
+    QUIZ: QUIZ, evaluateQuiz: evaluateQuiz,
     NN: NN, neuralForward: neuralForward
   };
 })(typeof window !== 'undefined' ? window : this);
