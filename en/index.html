@@ -26,7 +26,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@112,600;112,800&family=Hanken+Grotesk:wght@400;500;600&family=DM+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/pagi/style.css?v=4">
+<link rel="stylesheet" href="/pagi/style.css?v=5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ProfessionalService", "name": "PAGI", "alternateName": "PAGI · Procesos automatizados con gestión e inteligencia", "url": "https://kawaiidatadev.github.io/pagi/", "image": "https://kawaiidatadev.github.io/pagi/og.png", "telephone": "+52 33 2439 3525", "email": "pychan.desuyo@gmail.com", "priceRange": "$5,000 - $35,000 MXN + IVA", "areaServed": {"@type": "AdministrativeArea", "name": "Zona Metropolitana de Guadalajara, Jalisco, México"}, "address": {"@type": "PostalAddress", "addressLocality": "Guadalajara", "addressRegion": "Jalisco", "addressCountry": "MX"}, "founder": {"@type": "Person", "name": "Luis Manuel Macías Patiño", "url": "https://kawaiidatadev.github.io/"}, "knowsAbout": ["Mejora de procesos", "Automatización de reportes", "Limpieza y validación de datos", "Power BI", "Power Query", "Python", "SQL", "Documentación de procesos"]}</script>
 </head>
 <body>
@@ -35,7 +35,7 @@
 <header class="top">
   <div class="wrap nav">
     <a class="brand" href="/pagi/en/" aria-label="PAGI, home"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg"><rect width="64" height="64" rx="14" fill="#0B1220"/><path d="M16 53V11h18a14 14 0 0 1 0 28H26v14z" fill="#fff"/><path d="M28 21L39 25L28 30" fill="none" stroke="#0B1220" stroke-width="2.4"/><circle cx="28" cy="21" r="3.2" fill="#2563EB"/><circle cx="28" cy="30" r="3.2" fill="#2563EB"/><circle cx="39" cy="25" r="3.6" fill="#F59E0B"/></svg><b>PAGI</b><small>Automated processes with management and intelligence</small></a>
-    <nav class="links" aria-label="Sections"><a href="#autodiagnostico">Self-check</a><a href="#servicios">Services</a><a href="#calculadora">Calculator</a><a href="#datos">Data</a><a href="#ia">AI</a><a href="#metodo">Method</a><a href="#casos">Cases</a><a href="#contacto">Contact</a></nav>
+    <nav class="links" aria-label="Sections"><a href="#servicios">Services</a><a href="#calculadora">Return</a><a href="#casos">Cases</a><a href="#metodo">Method</a><a href="#contacto">Contact</a></nav>
     <div class="tools">
       <a class="icon-btn" href="/pagi/" hreflang="es" lang="es" data-lang-ok data-lang-link title="Versión en español" aria-label="Versión en español">ES</a>
       <button class="icon-btn" type="button" id="theme-btn" aria-label="Change theme"></button>
@@ -44,7 +44,7 @@
       <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     </div>
   </div>
-  <div class="mobile-menu" id="mobile-menu" hidden><div class="wrap"><nav aria-label="Sections"><a href="#autodiagnostico">Self-check</a><a href="#servicios">Services</a><a href="#calculadora">Calculator</a><a href="#datos">Data</a><a href="#ia">AI</a><a href="#metodo">Method</a><a href="#casos">Cases</a><a href="#contacto">Contact</a><a class="btn primary" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a></nav></div></div>
+  <div class="mobile-menu" id="mobile-menu" hidden><div class="wrap"><nav aria-label="Sections"><a href="#servicios">Services</a><a href="#calculadora">Return</a><a href="#casos">Cases</a><a href="#metodo">Method</a><a href="#contacto">Contact</a><a class="btn primary" href="https://wa.me/523324393525?text=Hi%2C%20I%20saw%20the%20PAGI%20website%20and%20I%27m%20interested%20in%20a%20process%20assessment." target="_blank" rel="noopener">Book an assessment</a></nav></div></div>
   <span class="progress" id="progress" aria-hidden="true"></span>
 </header>
 <main id="main">
@@ -93,37 +93,7 @@
     </div>
   </div>
 
-  <section id="autodiagnostico">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="label">Self-check · 7 questions</span>
-        <h2>Where does your time go?</h2>
-        <p class="lead">Answer how often each situation happens and we'll tell you where we would start. Answers are processed in your browser and are not sent anywhere.</p>
-      </div>
-      <div class="quiz">
-        <form class="card qbox reveal" id="quiz" novalidate>
-          <div class="qprog">
-            <div class="label" style="color:var(--ink)" id="qcount">Question 1 of 7</div>
-            <div class="bar" role="progressbar" aria-labelledby="qcount" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="qbar"><span></span></div>
-            <div class="qdots" id="qdots" aria-label="Go to question"></div>
-          </div>
-          <div id="qsteps"></div>
-          <p class="err" id="qerr" role="alert"></p>
-          <div class="qnav">
-            <button type="button" class="btn ghost" id="qprev">← Back</button>
-            <button type="button" class="btn blue" id="qnext">Next →</button>
-          </div>
-        </form>
-        <aside class="card result reveal" id="qresult" aria-live="polite" style="--d:1">
-          <span class="label">Result</span>
-          <p class="empty" id="qempty">Answer the 7 questions to see your result. Use the numbers to move between them.</p>
-          <div id="qout" hidden></div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <section id="servicios" class="flush">
+  <section id="servicios">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="label">Services</span>
@@ -140,7 +110,7 @@
       <div class="sec-head reveal">
         <span class="label">Cost and return calculator</span>
         <h2>What does that process cost today, and when would automating it pay off?</h2>
-        <p class="lead">Change the values using a real process. We separate the value of freed time from money you actually save: freed hours only become savings if that time is reused or avoids a cost.</p>
+        <p class="lead">With three figures you can estimate what a manual process costs today and how long automating it would take to pay off. The value of freed time only becomes savings if that time goes to something else or avoids a cost.</p>
       </div>
       <div class="calc">
         <form class="card reveal" id="calc" novalidate>
@@ -150,17 +120,20 @@
               <div class="field"><label for="c-horas">Hours per week</label><input id="c-horas" inputmode="decimal" value="5" aria-describedby="e-horas"><span class="err" id="e-horas"></span></div>
               <div class="field"><label for="c-personas">People involved</label><input id="c-personas" inputmode="numeric" value="1" aria-describedby="e-personas"><span class="err" id="e-personas"></span></div>
               <div class="field"><label for="c-costoHora">Cost per hour (MXN)</label><input id="c-costoHora" inputmode="decimal" value="120" aria-describedby="h-costo e-costoHora"><span class="hint" id="h-costo">Salary plus benefits divided by hours worked. $20,000 MXN/month ≈ $120/hour.</span><span class="err" id="e-costoHora"></span></div>
-              <div class="field"><label for="c-semanas">Operating weeks per year</label><input id="c-semanas" inputmode="numeric" value="48" aria-describedby="e-semanas"><span class="err" id="e-semanas"></span></div>
             </div>
           </fieldset>
+          <details class="fold adv"><summary>Adjust assumptions (optional)</summary>
+          <div class="fold-body">
           <fieldset><legend>Automation assumptions</legend>
             <div class="fields">
+              <div class="field"><label for="c-semanas">Operating weeks per year</label><input id="c-semanas" inputmode="numeric" value="48" aria-describedby="e-semanas"><span class="err" id="e-semanas"></span></div>
               <div class="field" style="grid-column:1/-1"><label for="c-reduccion">Potential reduction of manual work: <output id="o-reduccion" class="num">60%</output></label><input id="c-reduccion" type="range" min="0" max="95" step="5" value="60" aria-describedby="h-red"><span class="hint" id="h-red">Assumption. The real value is measured after the project.</span></div>
               <div class="field"><label for="c-inversion">Initial investment (MXN)</label><input id="c-inversion" inputmode="decimal" value="25000" aria-describedby="h-inv e-inversion"><span class="hint" id="h-inv">Example within the S2 service range.</span><span class="err" id="e-inversion"></span></div>
               <div class="field"><label for="c-recurrente">Recurring cost per year (MXN)</label><input id="c-recurrente" inputmode="decimal" value="0" aria-describedby="h-rec e-recurrente"><span class="hint" id="h-rec">Licenses, hosting or support. 0 if none.</span><span class="err" id="e-recurrente"></span></div>
               <div class="field"><label for="c-anios">Evaluation horizon (years)</label><input id="c-anios" inputmode="numeric" value="3" aria-describedby="e-anios"><span class="err" id="e-anios"></span></div>
             </div>
           </fieldset>
+          </div></details>
           <button type="button" class="btn ghost small" id="calc-reset">Reset example values</button>
         </form>
 
@@ -171,18 +144,22 @@
             <div class="tile"><span class="v" data-k="costoActual">—</span><span class="k">Annual labor cost</span></div>
             <div class="tile"><span class="v" data-k="dias">—</span><span class="k">Equivalent working days</span></div>
           </div>
+          <div class="group-title"><span class="label" style="color:var(--ink)">Middle scenario</span><span class="label" id="horizon-label"></span></div>
+          <div class="tiles">
+            <div class="tile key"><span class="v" data-k="valorLiberado">—</span><span class="k">Value of freed time per year (not cash)</span></div>
+            <div class="tile key"><span class="v" data-k="beneficioNeto">—</span><span class="k">Net benefit over the horizon</span></div>
+            <div class="tile key"><span class="v" data-k="recuperacion">—</span><span class="k">Payback period</span></div>
+          </div>
+          <details class="fold calc-more"><summary>See details: charts, scenarios and formulas</summary>
+          <div class="fold-body">
+          <div class="tiles">
+            <div class="tile"><span class="v" data-k="horasLiberadas">—</span><span class="k">Hours potentially freed per year</span></div>
+            <div class="tile"><span class="v" data-k="costoAutomatizado">—</span><span class="k">Annual cost with the automated process</span></div>
+            <div class="tile"><span class="v" data-k="inversion">—</span><span class="k">Initial investment</span></div>
+          </div>
           <div class="chart">
             <div class="cal" id="cal" role="img" aria-labelledby="cal-cap"></div>
             <p class="muted" style="font-size:.85rem" id="cal-cap"></p>
-          </div>
-          <div class="group-title"><span class="label" style="color:var(--ink)">Middle scenario</span><span class="label" id="horizon-label"></span></div>
-          <div class="tiles">
-            <div class="tile"><span class="v" data-k="horasLiberadas">—</span><span class="k">Hours potentially freed per year</span></div>
-            <div class="tile"><span class="v" data-k="valorLiberado">—</span><span class="k">Value of freed time per year (not cash)</span></div>
-            <div class="tile"><span class="v" data-k="costoAutomatizado">—</span><span class="k">Annual cost with the automated process</span></div>
-            <div class="tile"><span class="v" data-k="inversion">—</span><span class="k">Initial investment</span></div>
-            <div class="tile key"><span class="v" data-k="beneficioNeto">—</span><span class="k">Net benefit over the horizon</span></div>
-            <div class="tile key"><span class="v" data-k="recuperacion">—</span><span class="k">Payback period</span></div>
           </div>
           <div class="chart" id="ch-annual">
             <h3 style="font-size:1rem">Annual cost: current vs automated process</h3>
@@ -215,20 +192,74 @@
               <li>Scenarios: the chosen reduction × 0.6 (conservative), × 1 (middle) and × 1.3 capped at 95% (optimistic).</li>
             </ul>
           </details>
+          </div></details>
           <a class="btn primary" id="calc-cta" href="https://wa.me/523324393525" target="_blank" rel="noopener">I want to measure this process</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="datos" class="flush">
+  <section id="casos" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="label">Demo · data cleaning and consolidation</span>
-        <h2>From a messy file to a reliable report.</h2>
-        <p class="lead">14 fictitious orders with the usual problems: stray spaces, mixed date formats, amounts with symbols, branches spelled several ways and a repeated id. The rules fix only what is safe; anything ambiguous goes to human review.</p>
+        <span class="label">Cases and demos</span>
+        <h2>Real work, told in the same format.</h2>
+        <p class="lead">Projects the founder built in electronics manufacturing before PAGI, without confidential data or client names, plus the demos on this page.</p>
       </div>
-      <div class="console etl reveal" id="etl">
+      <div class="cases" id="cases-list">
+        <article class="case reveal"><span class="pill done">Completed · prior experience</span><h3>Classifying free-text failure records</h3>
+          <dl><dt>Problem</dt><dd>51,525 hand-written maintenance records that could not be analyzed by component.</dd>
+          <dt>Solution</dt><dd>Natural-language model trained on 139 hand-labeled records to identify the replaced component.</dd>
+          <dt>Validation</dt><dd>Evaluated against labeled records: 86.8% precision and 88.2% recall.</dd>
+          <dt>Result</dt><dd>2,992 failures segmented by component, a basis to prioritize maintenance.</dd></dl>
+          <ul class="techs"><li>Python</li><li>NLP</li><li>SQL</li></ul></article>
+        <article class="case reveal" style="--d:1"><span class="pill done">Completed · prior experience</span><h3>Bill of materials migration to SAP Business One</h3>
+          <dl><dt>Problem</dt><dd>Thousands of bills of materials in a legacy system that had to move to the new ERP.</dd>
+          <dt>Solution</dt><dd>Automated extraction via web scraping and conversion to SAP's import format.</dd>
+          <dt>Validation</dt><dd>Recursive BOM-explosion algorithm to check consumption for 3,093 products over a production year.</dd>
+          <dt>Result</dt><dd>3,660 bills of materials extracted and converted in 5 to 6 days of continuous run time.</dd></dl>
+          <ul class="techs"><li>Python</li><li>Web scraping</li><li>SAP Business One</li></ul></article>
+        <article class="case reveal"><span class="pill done">Completed · prior experience</span><h3>Maintenance management system</h3>
+          <dl><dt>Problem</dt><dd>Work orders, preventive plans, inventory and line stops spread across files.</dd>
+          <dt>Solution</dt><dd>Internal web app with a database, PDF reports and a local AI assistant.</dd>
+          <dt>Validation</dt><dd>Version-controlled development: 184 commits in 51 days.</dd>
+          <dt>Result</dt><dd>One place for maintenance information, with history and reports.</dd></dl>
+          <ul class="techs"><li>Python · Flask</li><li>MySQL</li><li>Docker</li></ul></article>
+        <article class="case reveal" style="--d:1"><span class="pill done">Completed · prior experience</span><h3>Bank transactions platform</h3>
+          <dl><dt>Problem</dt><dd>Treasury and Accounting loaded bank statements by hand, without traceability.</dd>
+          <dt>Solution</dt><dd>Web platform with validation, versioning and an audit trail for every upload.</dd>
+          <dt>Validation</dt><dd>Automated tests and continuous integration.</dd>
+          <dt>Result</dt><dd>Traceable uploads: who uploaded what and when is recorded.</dd></dl>
+          <ul class="techs"><li>Flask</li><li>MySQL</li><li>pytest</li><li>Jenkins</li></ul></article>
+        <article class="case reveal"><span class="pill demo">Demo on this page</span><h3>Order cleaning and consolidation</h3>
+          <dl><dt>Problem</dt><dd>Data with mixed formats and duplicates.</dd>
+          <dt>Solution</dt><dd>Six explicit rules that separate safe fixes from cases for review.</dd>
+          <dt>Validation</dt><dd>Deterministic output, covered by automated tests.</dd>
+          <dt>Result</dt><dd><a href="#datos">Try it below</a></dd></dl>
+          <ul class="techs"><li>JavaScript</li><li>Data quality rules</li></ul></article>
+        <article class="case reveal" style="--d:1"><span class="pill demo">Demo on this page</span><h3>Cost and return calculator</h3>
+          <dl><dt>Problem</dt><dd>Deciding whether automating a process is worth it.</dd>
+          <dt>Solution</dt><dd>Model with published formulas and three scenarios.</dd>
+          <dt>Validation</dt><dd>Formulas checked with unit tests and edge cases.</dd>
+          <dt>Result</dt><dd><a href="#calculadora">Use it above</a></dd></dl>
+          <ul class="techs"><li>JavaScript</li><li>SVG</li></ul></article>
+      </div>
+      <p class="case-note">Figures from prior projects come from the founder's own records; no internal data from the company where they were done is published.</p>
+    </div>
+  </section>
+
+  <section id="demos" class="flush">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <span class="label">Technical demos · optional</span>
+        <h2>Want to see how it works under the hood?</h2>
+        <p class="lead">Two interactive examples meant for technical teams. You don't need to open them to understand or hire the service.</p>
+      </div>
+      <div class="demos">
+        <details class="fold demo reveal" id="datos"><summary><span>Data cleaning and consolidation<small>14 fictitious orders go through 6 rules and end up in a reliable report.</small></span></summary>
+          <div class="fold-body">
+            <p class="lead">14 fictitious orders with the usual problems: stray spaces, mixed date formats, amounts with symbols, branches spelled several ways and a repeated id. The rules fix only what is safe; anything ambiguous goes to human review.</p>
+      <div class="console etl" id="etl">
         <div class="console-head">
           <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
           <span class="label">pedidos_marzo.csv → pedidos_limpios</span>
@@ -253,17 +284,12 @@
         </div>
         <p class="console-foot">In a real project these rules are written in Python or SQL, documented and scheduled against your files or ERP. Here they run in JavaScript inside your browser so you can watch them work.</p>
       </div>
-    </div>
-  </section>
-
-  <section id="ia" class="flush">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="label">Neural lab · simulation</span>
-        <h2>How a neural network reasons about motor data.</h2>
-        <p class="lead">Four motor readings flow through four hidden neurons into three possible states. Move the values and watch the activations and connections change. The weights were set by hand so every step can be explained: this is an illustration, not a trained model or a diagnostic tool.</p>
-      </div>
-      <div class="console nn reveal" id="nn">
+          </div>
+        </details>
+        <details class="fold demo reveal" id="ia"><summary><span>Neural network for maintenance · simulation<small>Four motor readings become a state: normal, wear or anomaly.</small></span></summary>
+          <div class="fold-body">
+            <p class="lead">Four motor readings flow through four hidden neurons into three possible states. Move the values and watch the activations and connections change. The weights were set by hand so every step can be explained: this is an illustration, not a trained model or a diagnostic tool.</p>
+      <div class="console nn" id="nn">
         <div class="console-head">
           <div class="dots" aria-hidden="true"><i></i><i></i><i></i></div>
           <span class="label">pagi_neural_lab · 4 → 4 → 3</span>
@@ -311,6 +337,9 @@
         </details>
         <p class="console-foot">Illustrative simulation with simplified variables: temperature, vibration, current and hours are not enough to diagnose a real machine. In a real project we train the model on the client's history, validate it on unseen data and report its accuracy, as in the failure classification case.</p>
       </div>
+          </div>
+        </details>
+      </div>
     </div>
   </section>
 
@@ -328,52 +357,33 @@
     </div>
   </section>
 
-  <section id="casos" class="flush">
+  <section id="autodiagnostico" class="flush">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="label">Cases and demos</span>
-        <h2>Real work, told in the same format.</h2>
-        <p class="lead">Projects the founder built in electronics manufacturing before PAGI, without confidential data or client names, plus the demos on this page.</p>
+        <span class="label">Self-check · 7 questions</span>
+        <h2>Where does your time go?</h2>
+        <p class="lead">Answer how often each situation happens and we'll tell you where we would start. Answers are processed in your browser and are not sent anywhere.</p>
       </div>
-      <div class="cases" id="cases-list">
-        <article class="case reveal"><span class="pill done">Completed · prior experience</span><h3>Classifying free-text failure records</h3>
-          <dl><dt>Problem</dt><dd>51,525 hand-written maintenance records that could not be analyzed by component.</dd>
-          <dt>Solution</dt><dd>Natural-language model trained on 139 hand-labeled records to identify the replaced component.</dd>
-          <dt>Validation</dt><dd>Evaluated against labeled records: 86.8% precision and 88.2% recall.</dd>
-          <dt>Result</dt><dd>2,992 failures segmented by component, a basis to prioritize maintenance.</dd></dl>
-          <ul class="techs"><li>Python</li><li>NLP</li><li>SQL</li></ul></article>
-        <article class="case reveal" style="--d:1"><span class="pill done">Completed · prior experience</span><h3>Bill of materials migration to SAP Business One</h3>
-          <dl><dt>Problem</dt><dd>Thousands of bills of materials in a legacy system that had to move to the new ERP.</dd>
-          <dt>Solution</dt><dd>Automated extraction via web scraping and conversion to SAP's import format.</dd>
-          <dt>Validation</dt><dd>Recursive BOM-explosion algorithm to check consumption for 3,093 products over a production year.</dd>
-          <dt>Result</dt><dd>3,660 bills of materials extracted and converted in 5 to 6 days of continuous run time.</dd></dl>
-          <ul class="techs"><li>Python</li><li>Web scraping</li><li>SAP Business One</li></ul></article>
-        <article class="case reveal"><span class="pill done">Completed · prior experience</span><h3>Maintenance management system</h3>
-          <dl><dt>Problem</dt><dd>Work orders, preventive plans, inventory and line stops spread across files.</dd>
-          <dt>Solution</dt><dd>Internal web app with a database, PDF reports and a local AI assistant.</dd>
-          <dt>Validation</dt><dd>Version-controlled development: 184 commits in 51 days.</dd>
-          <dt>Result</dt><dd>One place for maintenance information, with history and reports.</dd></dl>
-          <ul class="techs"><li>Python · Flask</li><li>MySQL</li><li>Docker</li></ul></article>
-        <article class="case reveal" style="--d:1"><span class="pill done">Completed · prior experience</span><h3>Bank transactions platform</h3>
-          <dl><dt>Problem</dt><dd>Treasury and Accounting loaded bank statements by hand, without traceability.</dd>
-          <dt>Solution</dt><dd>Web platform with validation, versioning and an audit trail for every upload.</dd>
-          <dt>Validation</dt><dd>Automated tests and continuous integration.</dd>
-          <dt>Result</dt><dd>Traceable uploads: who uploaded what and when is recorded.</dd></dl>
-          <ul class="techs"><li>Flask</li><li>MySQL</li><li>pytest</li><li>Jenkins</li></ul></article>
-        <article class="case reveal"><span class="pill demo">Demo on this page</span><h3>Order cleaning and consolidation</h3>
-          <dl><dt>Problem</dt><dd>Data with mixed formats and duplicates.</dd>
-          <dt>Solution</dt><dd>Six explicit rules that separate safe fixes from cases for review.</dd>
-          <dt>Validation</dt><dd>Deterministic output, covered by automated tests.</dd>
-          <dt>Result</dt><dd><a href="#datos">Try it above</a></dd></dl>
-          <ul class="techs"><li>JavaScript</li><li>Data quality rules</li></ul></article>
-        <article class="case reveal" style="--d:1"><span class="pill demo">Demo on this page</span><h3>Cost and return calculator</h3>
-          <dl><dt>Problem</dt><dd>Deciding whether automating a process is worth it.</dd>
-          <dt>Solution</dt><dd>Model with published formulas and three scenarios.</dd>
-          <dt>Validation</dt><dd>Formulas checked with unit tests and edge cases.</dd>
-          <dt>Result</dt><dd><a href="#calculadora">Use it above</a></dd></dl>
-          <ul class="techs"><li>JavaScript</li><li>SVG</li></ul></article>
+      <div class="quiz">
+        <form class="card qbox reveal" id="quiz" novalidate>
+          <div class="qprog">
+            <div class="label" style="color:var(--ink)" id="qcount">Question 1 of 7</div>
+            <div class="bar" role="progressbar" aria-labelledby="qcount" aria-valuemin="0" aria-valuemax="7" aria-valuenow="0" id="qbar"><span></span></div>
+            <div class="qdots" id="qdots" aria-label="Go to question"></div>
+          </div>
+          <div id="qsteps"></div>
+          <p class="err" id="qerr" role="alert"></p>
+          <div class="qnav">
+            <button type="button" class="btn ghost" id="qprev">← Back</button>
+            <button type="button" class="btn blue" id="qnext">Next →</button>
+          </div>
+        </form>
+        <aside class="card result reveal" id="qresult" aria-live="polite" style="--d:1">
+          <span class="label">Result</span>
+          <p class="empty" id="qempty">Answer the 7 questions to see your result. Use the numbers to move between them.</p>
+          <div id="qout" hidden></div>
+        </aside>
       </div>
-      <p class="case-note">Figures from prior projects come from the founder's own records; no internal data from the company where they were done is published.</p>
     </div>
   </section>
 
@@ -556,7 +566,7 @@
  {"t":"Automate","obj":"Build the simplest solution that solves the problem.","act":["Choose the tool: Excel and Power Query, Python, SQL or the ERP","Develop under version control","Test with real anonymized data where possible"],"in":["Approved process","Read access to sources"],"out":["Working solution","Project source code"],"ok":["Passes the agreed tests","Works with the client's real files"],"gate":"The client validates the solution with real data."},
  {"t":"Document","obj":"Make sure the client can run the solution without depending on PAGI.","act":["Write the user manual","Document installation and configuration","Train the team"],"in":["Validated solution"],"out":["User manual","Technical documentation","Training session"],"ok":["Someone else runs the process using the documentation"],"gate":"Signed delivery record and final payment made."},
  {"t":"Measure","obj":"Compare the result against the baseline.","act":["Measure times and errors with the new process","Compare against stage 1","Propose the next improvement"],"in":["Baseline","Weeks of operation with the solution"],"out":["Measured before-and-after result","KPI for follow-up"],"ok":["The result uses the same unit as the baseline","If it didn't improve, it is stated and explained"],"gate":"Project closure or move to support (S5)."}],
-"mL":{"stage":"Stage","obj":"Objective","act":"Activities","in":"Inputs","out":"Deliverables","ok":"Acceptance criteria","gate":"To move on","prev":"← Previous stage","next":"Next stage →"},
+"mL":{"stage":"Stage","obj":"Objective","act":"Activities","in":"Inputs","out":"Deliverables","ok":"Acceptance criteria","gate":"To move on","more":"See activities, inputs and criteria","prev":"← Previous stage","next":"Next stage →"},
 "calc":{"empty":"Enter a number.","range":"Outside the allowed range.","integer":"Use a whole number.","stale":"Fix the marked fields to update the results.","h":"h","days":"days","months":"months","years":"years","year":"year","none":"Does not pay back","noInv":"No investment","beyond":"(beyond the horizon)","na":"N/A","cons":"Conservative","mid":"Middle","opt":"Optimistic","cur":"Current","aut":"Automated","month":"Month","horizon":"horizon",
  "calCap":"Each square is a working day. Orange: days spent on the task; green: days that would be freed in the middle scenario.",
  "calFull":"The task takes more than every working day of the year: more than one full-time person.",
@@ -594,8 +604,8 @@
     </nav>
   </div>
 </footer>
-<script src="/pagi/site.js?v=4" defer></script>
-<script src="/pagi/logic.js?v=4" defer></script>
-<script src="/pagi/app.js?v=4" defer></script>
+<script src="/pagi/site.js?v=5" defer></script>
+<script src="/pagi/logic.js?v=5" defer></script>
+<script src="/pagi/app.js?v=5" defer></script>
 </body>
 </html>
